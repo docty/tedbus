@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.69ebd9cc.chunk.css",
+    "main.js": "/static/js/main.91debd4a.chunk.js",
+    "main.js.map": "/static/js/main.91debd4a.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.cd73cb1d.js",
+    "runtime~main.js.map": "/static/js/runtime~main.cd73cb1d.js.map",
+    "static/js/2.1be4d8b9.chunk.js": "/static/js/2.1be4d8b9.chunk.js",
+    "static/js/2.1be4d8b9.chunk.js.map": "/static/js/2.1be4d8b9.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.c2214d1ecca7f80a97bde1d5d39a0d1c.js": "/precache-manifest.c2214d1ecca7f80a97bde1d5d39a0d1c.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.69ebd9cc.chunk.css.map": "/static/css/main.69ebd9cc.chunk.css.map",
+    "static/media/4.jpg": "/static/media/4.7ea17d9b.jpg",
+    "static/media/styles.css": "/static/media/bus-station.7b48628b.jpeg"
+  }
+}
