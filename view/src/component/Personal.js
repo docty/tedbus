@@ -2,6 +2,28 @@ import React, {Component} from 'react';
 import Icon from '../Image/4.jpg';
 
 class Personal extends Component {
+
+
+
+
+
+
+    constructor(props){
+        super(props);
+        this.onNextItem = this.onNextItem.bind(this);
+    }
+
+    componentDidMount() {
+        //$("#datepicker").val('henry');
+
+
+    }
+
+    onNextItem(e){
+        this.props.changeForm(e);
+    }
+
+
     render() {
         return (
             <div className="detail-wrapper">
@@ -15,8 +37,8 @@ class Personal extends Component {
                         <div><label>Email</label><input className="form-control" type="text"/></div>
                     </div>
                     <div className="btn-controllers">
-                        <button className="btn btn-primary float-left" type="button">BACK</button>
-                        <button className="btn btn-primary float-right" type="button">NEXT</button>
+                        <button className="btn btn-primary float-left" type="button" onClick={() => this.onNextItem('detail')}>BACK</button>
+                        <button className="btn btn-primary float-right" type="button" onClick={() => this.onNextItem('payment')}>NEXT</button>
                     </div>
                 </form>
                 <div className="detail-image-holder"><img src={Icon} width="500px" height="350px" alt="Cannot load"/></div>

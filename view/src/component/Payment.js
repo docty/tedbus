@@ -2,6 +2,24 @@ import React, {Component} from 'react';
 import Icon from '../Image/4.jpg';
 
 class Payment extends Component {
+
+
+
+    constructor(props){
+        super(props);
+        this.onNextItem = this.onNextItem.bind(this);
+    }
+
+    componentDidMount() {
+        //$("#datepicker").val('henry');
+
+
+    }
+
+    onNextItem(e){
+        this.props.changeForm(e);
+    }
+
     render() {
         return (
             <div className="detail-wrapper">
@@ -14,7 +32,7 @@ class Payment extends Component {
                         </div>
                     </div>
                     <div className="btn-controllers">
-                        <button className="btn btn-primary float-left" type="button">BACK</button>
+                        <button className="btn btn-primary float-left" type="button" onClick={() => this.onNextItem('personal')}>BACK</button>
                         <button className="btn btn-primary float-right" type="button">NEXT</button>
                     </div>
                 </form>

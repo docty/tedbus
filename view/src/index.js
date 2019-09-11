@@ -5,17 +5,18 @@ import './Style/styles.css';
 import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
 
 import HomePage from './component/HomePage';
-import Details from './component/Details';
+
 import Personal from './component/Personal';
 import Payment from './component/Payment';
 
 import * as serviceWorker from './serviceWorker';
+import Skeleton from "./component/Skeleton";
 
 const routing = (
     <Router>
         <Switch>
             <Route exact path='/' component={HomePage}/>
-             <Route exact path='/detail' component={Details}/>
+             <Route exact path='/detail' component={Skeleton}/>
              <Route exact path='/personal' component={Personal}/>
              <Route exact path='/payment' component={Payment}/>
         </Switch>

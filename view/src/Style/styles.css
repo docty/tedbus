@@ -6,6 +6,10 @@ body {
   height:984px;
 }
 
+body {
+  margin:0 20px;
+}
+
 .container-wrapper {
   padding:15% 10%;
   display:flex;
@@ -55,13 +59,26 @@ body {
   }
 }
 
-.detail-wrapper {
-  display:flex;
-  flex-direction:row;
-  align-items:center;
-  align-content:space-around;
-  justify-content:center;
-  margin-top:6%;
+@media (min-width: 576px) {
+  .detail-wrapper {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    align-content:space-around;
+    justify-content:center;
+    margin-top:1%;
+  }
+}
+
+@media (min-width: 768px) {
+  .detail-wrapper {
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    align-content:space-around;
+    justify-content:center;
+    margin-top:2%;
+  }
 }
 
 .detail-form {
@@ -72,6 +89,7 @@ body {
   margin-right:2%;
   border-radius:3%;
   color:#ffffff;
+  margin-bottom:8%;
 }
 
 .detail-form-item {
@@ -88,13 +106,21 @@ body {
   border:6px solid #111111;
   border-radius:2%;
   background-color:#171717;
-
-
+  margin-bottom:8%;
 }
 
-.detail-image-holder > div {
-  width :500px;
-  height:350px;
+@media (min-width: 768px) {
+  .detail-image-holder {
+    width:330px;
+    height:300px;
+  }
+}
+
+@media (min-width: 992px) {
+  .detail-image-holder {
+    width:500px;
+    height:350px;
+  }
 }
 
 .detail-form-item > div {
@@ -111,5 +137,46 @@ body {
 
 .btn-controllers > button {
   margin-top:2%;
+}
+
+.detail-header {
+  display:flex;
+  flex-direction:row;
+  margin-top:3%;
+  background-color:#485150;
+  color:rgb(65,25,25);
+  margin-bottom:1%;
+}
+
+@media (min-width: 768px) {
+  .detail-header {
+    max-width:50%;
+    margin-bottom:-1%;
+  }
+}
+
+@media (min-width: 992px) {
+  .detail-header {
+    max-width:43%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .detail-header {
+    max-width:42%;
+    margin-left:8%;
+  }
+}
+
+.detail-header > h4 {
+  line-height:19px;
+  padding:3px 15px;
+  font-size:15px;
+  margin-bottom:0;
+}
+
+.active-item {
+  background-color:#9c711e;
+  color:rgb(255,255,255);
 }
 
