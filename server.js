@@ -12,5 +12,5 @@ app.get('/*', function (req, res) {
 
 
 app.listen(port, function() {
-    console.log('connection successful');
+    console.log('connection successful on http://localhost:'+port);
 });

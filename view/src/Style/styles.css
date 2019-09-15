@@ -90,11 +90,14 @@ body {
   border-radius:3%;
   color:#ffffff;
   margin-bottom:8%;
+  max-width: 500px;
+  width: 500px;
+
 }
 
 .detail-form-item {
   display:flex;
-  justify-content:center;
+  justify-content: space-between;
   flex-direction:row;
   padding-bottom:4%;
 }

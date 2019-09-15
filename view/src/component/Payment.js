@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
+import Mtn from '../Image/mtn.jpg';
 import Icon from '../Image/4.jpg';
+import AwesomeSlider from 'react-awesome-slider';
+
 
 class Payment extends Component {
 
@@ -26,7 +29,7 @@ class Payment extends Component {
                 <form className="detail-form">
                     <div className="detail-form-item">
                         <div><label>Pay By</label>
-                            <div className="form-check"><input className="form-check-input" type="radio" id="formCheck-1" name="cash"/><label className="form-check-label" htmlFor="formCheck-1">MTN Mobile Money</label></div>
+                            <div className="form-check"><input className="form-check-input" type="radio" id="formCheck-1" name="cash"/><label className="form-check-label" htmlFor="formCheck-1"><img src={Mtn} style={{width : '80px'}} alt="mtn mobile money"/></label></div>
                             <div className="form-check"><input className="form-check-input" type="radio" id="formCheck-1" name="cash"/><label className="form-check-label" htmlFor="formCheck-1">Vodafone Cash</label></div>
                             <div className="form-check"><input className="form-check-input" type="radio" id="formCheck-1" name="cash"/><label className="form-check-label" htmlFor="formCheck-1">AirtelTigo Cash</label></div>
                         </div>
@@ -36,7 +39,11 @@ class Payment extends Component {
                         <button className="btn btn-primary float-right" type="button">NEXT</button>
                     </div>
                 </form>
-                <div className="detail-image-holder"><img src={Icon} width="500px" height="350px" alt="error loading"/></div>
+                <AwesomeSlider className="detail-image-holder">
+                    <div data-src={Icon} />
+                    <div data-src={Icon} />
+                    <div data-src={Icon} />
+                </AwesomeSlider>
             </div>
         );
     }

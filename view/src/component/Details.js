@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Icon from '../Image/4.jpg';
 //import $ from 'jquery';
 import AwesomeSlider from 'react-awesome-slider';
-import 'react-awesome-slider/dist/styles.css';
+
 
 class Details extends Component {
 
@@ -34,35 +34,44 @@ class Details extends Component {
               <div className="detail-wrapper">
                     <form className="detail-form">
                         <div className="detail-form-item">
-                            <div><label>Bus</label><select className="form-control">
+                            <div>
+                                <label>Bus</label>
+                                <select className="form-control">
                                 <option value="vip" >VIP</option>
                                 <option value="stc">STC</option>
-                                <option value="mmt">Metro Mass Transit</option>
-                            </select></div>
-                            <div><label>Bus Type</label><select className="form-control">
-                                <option value="vip" >VIP</option>
-                                <option value="stc">STC</option>
-                                <option value="mmt">Metro Mass Transit</option>
-                            </select></div>
-                            <div><label>Price</label><input className="form-control" type="text" disabled=""
-                                                            placeholder="Default Price"/></div>
+                                <option value="mmt">M Express</option>
+                            </select>
+                            </div>
+                            <div>
+                                <label>Bus Type</label>
+                                <select className="form-control" style={{width : '120px'}}>
+                                <option value="asford" >Asford</option>
+                                <option value="dalex">Dalex</option>
+                                <option value="runbat">Runbat </option>
+                            </select>
+                            </div>
+                            <div>
+                                <label>Price</label>
+                                <input className="form-control" type="text" disabled
+                                                            placeholder="Default Price"/>
+                            </div>
                         </div>
                         <div className="detail-form-item">
-                            <div><label>Date</label><select className="form-control">
-                                <option value="vip" >VIP</option>
-                                <option value="stc">STC</option>
-                                <option value="mmt">Metro Mass Transit</option>
-                            </select></div>
-                            <div><label>Time</label><select className="form-control">
-                                <option value="vip" >VIP</option>
-                                <option value="stc">STC</option>
-                                <option value="mmt">Metro Mass Transit</option>
-                            </select></div>
-                            <div><label>Pick up point</label><select className="form-control">
-                                <option value="vip" >VIP</option>
-                                <option value="stc">STC</option>
-                                <option value="mmt">Metro Mass Transit</option>
-                            </select></div>
+                            <div>
+                                <label>Date</label>
+                                <input className="form-control" placeholder="Select pickup date"/>
+                            </div>
+                            <div>
+                                <label>Time</label>
+                                <input className="form-control" placeholder="Select time"/>
+                             </div>
+                            <div>
+                                <label>Pick up point</label>
+                                <select className="form-control">
+                                    <option value="am" >Asafo Market</option>
+                                    <option value="ts">Tech Station</option>
+                                </select>
+                            </div>
                         </div>
                         <div className="detail-form-item">
                             <div className="detail-passengers"><label>Number of Passengers</label><select
