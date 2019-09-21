@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import Icon from '../Image/4.jpg';
 //import $ from 'jquery';
 import AwesomeSlider from 'react-awesome-slider';
-
+import DatePicker from 'react-datepicker';
+// import moment from 'moment';
+import 'react-datepicker/dist/react-datepicker.css';
 
 class Details extends Component {
 
@@ -11,6 +13,10 @@ class Details extends Component {
         constructor(props){
             super(props);
             this.onNextItem = this.onNextItem.bind(this);
+            this.handleChange = this.handleChange.bind(this);
+            this.state = {
+                startDate: new Date()
+            };
         }
 
     componentDidMount() {
@@ -23,7 +29,11 @@ class Details extends Component {
          this.props.changeForm(e);
     }
 
-
+    handleChange(date) {
+        this.setState({
+            startDate: date
+        })
+    }
 
 
 
@@ -59,7 +69,12 @@ class Details extends Component {
                         <div className="detail-form-item">
                             <div>
                                 <label>Date</label>
-                                <input className="form-control" placeholder="Select pickup date"/>
+                                <DatePicker className="form-control"
+                                    selected={ this.state.startDate }
+                                    onChange={ this.handleChange }
+                                    name="startDate"
+
+                                />
                             </div>
                             <div>
                                 <label>Time</label>
