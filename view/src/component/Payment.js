@@ -36,7 +36,7 @@ class Payment extends Component {
                     </div>
                     <div className="btn-controllers">
                         <button className="btn btn-primary float-left" type="button" onClick={() => this.onNextItem('personal')}>BACK</button>
-                        <button className="btn btn-primary float-right" type="button">NEXT</button>
+                        <button className="btn btn-primary float-right" type="button" onClick={() => this.onNextItem('summary')}>NEXT</button>
                     </div>
                 </form>
                 <AwesomeSlider className="detail-image-holder">

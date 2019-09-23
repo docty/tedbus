@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import Icon from '../Image/4.jpg';
-//import $ from 'jquery';
+
 import AwesomeSlider from 'react-awesome-slider';
 import DatePicker from 'react-datepicker';
 // import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
+import $ from "jquery";
 
 class Details extends Component {
 
@@ -14,18 +15,51 @@ class Details extends Component {
             super(props);
             this.onNextItem = this.onNextItem.bind(this);
             this.handleChange = this.handleChange.bind(this);
+            this.changeBus = this.changeBus.bind(this);
             this.state = {
                 startDate: new Date()
             };
         }
 
     componentDidMount() {
-        //$("#datepicker").val('henry');
+        const buses = ['VIP', 'STC', 'M3 Express'];
+        const model = ['Asford', 'Dalex', 'Runbat'];
+        for (let i = 0; i < buses.length; i++){
+            $("#buses").append(new Option(buses[i], buses[i]));
+        }
+        for (let i = 0; i < model.length; i++){
+            $("#buses_model").append(new Option(model[i], model[i]));
+        }
+        $('#price').val('GHC 55.00');
 
+        }
 
+    changeBus(e){
+           let model;
+            switch (e.target.value) {
+                case 'VIP':
+                       model = ['Asford', 'Dalex', 'Runbat'];
+                       $('#price').val('GHC 55.00');
+                       break;
+                case 'STC':
+                       model = ['Flat', 'Broad', 'Coach'];
+                       $('#price').val('GHC 50.00');
+                       break;
+                case 'M3 Express':
+                      model = ['Opener', 'Closed', 'Euro'];
+                       $('#price').val('GHC 45.00');
+                      break;
+                default:
+                      model = ['Asford', 'Dalex', 'Runbat'];
+            }
+            $('#buses_model').empty();
+        for (let i = 0; i < model.length; i++){
+            $("#buses_model").append(new Option(model[i], model[i]));
+        }
     }
 
-     onNextItem(e){
+
+    onNextItem(e){
          this.props.changeForm(e);
     }
 
@@ -46,24 +80,15 @@ class Details extends Component {
                         <div className="detail-form-item">
                             <div>
                                 <label>Bus</label>
-                                <select className="form-control">
-                                <option value="vip" >VIP</option>
-                                <option value="stc">STC</option>
-                                <option value="mmt">M Express</option>
-                            </select>
+                                <select className="form-control" id="buses" onChange={this.changeBus}/>
                             </div>
                             <div>
                                 <label>Bus Type</label>
-                                <select className="form-control" style={{width : '120px'}}>
-                                <option value="asford" >Asford</option>
-                                <option value="dalex">Dalex</option>
-                                <option value="runbat">Runbat </option>
-                            </select>
+                                <select className="form-control" style={{width: '120px'}} id="buses_model"/>
                             </div>
                             <div>
                                 <label>Price</label>
-                                <input className="form-control" type="text" disabled
-                                                            placeholder="Default Price"/>
+                                <input className="form-control" type="text" disabled id="price" placeholder="Default Price"/>
                             </div>
                         </div>
                         <div className="detail-form-item">

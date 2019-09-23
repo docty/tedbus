@@ -3,6 +3,7 @@ import 'react-awesome-slider/dist/styles.css';
 import Details from "./Details";
 import Personal from "./Personal";
 import Payment from "./Payment";
+import Summary from "./Summary";
 
 class Skeleton extends Component {
 
@@ -63,6 +64,18 @@ class Skeleton extends Component {
                             <h4>Summary</h4>
                         </div>
                         <Payment changeForm={this.SwapForm}/>
+                    </div>
+                );
+            case 'summary':
+                return (
+                    <div>
+                        <div className="d-flex flex-row justify-content-between detail-header">
+                            <h4 className="float-left ">Details</h4>
+                            <h4 className="float-left ">Personal</h4>
+                            <h4 className="float-left">Payment</h4>
+                            <h4 className="active-item">Summary</h4>
+                        </div>
+                        <Summary  />
                     </div>
                 );
             default :
