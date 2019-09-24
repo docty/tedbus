@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d34a1954-5edf-444b-9d2b-3562bc8e1d9e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/build/precache-manifest.13f31efba29bf97fde4f3732e6af45da.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/build/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/build/static/js/2.8b41c55b.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/build/static/js/2.8b41c55b.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/build/static/js/main.d2da2d65.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/build/static/js/main.d2da2d65.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/src/component/Details.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/component/Details.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/src/component/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/component/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/src/component/Payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/component/Payment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/src/component/Personal.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/component/Personal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/src/component/Skeleton.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/src/component/Skeleton.js" afterDir="false" />
-    </list>
+    <list default="true" id="d34a1954-5edf-444b-9d2b-3562bc8e1d9e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +99,11 @@
               <item name="reactapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="reactapp" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="reactapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reactapp" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -191,17 +181,17 @@
       <workItem from="1568562941587" duration="7395000" />
       <workItem from="1568823628527" duration="2085000" />
       <workItem from="1569086204413" duration="2888000" />
-      <workItem from="1569228475533" duration="10926000" />
+      <workItem from="1569228475533" duration="10990000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66259000" />
+    <option name="totallyTimeSpent" value="66323000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2806354" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2806354" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -216,7 +206,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2405892" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2405892" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
