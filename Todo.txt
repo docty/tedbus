@@ -1,0 +1,2 @@
+Link the image gallery to bus model
+Set time picker

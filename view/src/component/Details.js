@@ -1,11 +1,7 @@
 import React, {Component} from 'react';
-import Icon from '../Image/4.jpg';
-
-import AwesomeSlider from 'react-awesome-slider';
-import DatePicker from 'react-datepicker';
+ import DatePicker from 'react-datepicker';
 // import moment from 'moment';
-import 'react-datepicker/dist/react-datepicker.css';
-import $ from "jquery";
+ import $ from "jquery";
 
 class Details extends Component {
 
@@ -17,7 +13,8 @@ class Details extends Component {
             this.handleChange = this.handleChange.bind(this);
             this.changeBus = this.changeBus.bind(this);
             this.state = {
-                startDate: new Date()
+                startDate: new Date(),
+                buses : 'VIP'
             };
         }
 
@@ -36,10 +33,14 @@ class Details extends Component {
 
     changeBus(e){
            let model;
+           this.setState({
+               buses: e.target.value
+           });
             switch (e.target.value) {
                 case 'VIP':
                        model = ['Asford', 'Dalex', 'Runbat'];
                        $('#price').val('GHC 55.00');
+
                        break;
                 case 'STC':
                        model = ['Flat', 'Broad', 'Coach'];
@@ -75,7 +76,7 @@ class Details extends Component {
     render() {
 
         return (
-              <div className="detail-wrapper">
+
                     <form className="detail-form">
                         <div className="detail-form-item">
                             <div>
@@ -130,17 +131,14 @@ class Details extends Component {
                             </div>
                         </div>
                         <div className="btn-controllers">
-                            <button className="btn btn-primary float-left" type="button">BACK</button>
+                            
                             <button className="btn btn-primary float-right" type="button" onClick={() => this.onNextItem('personal')}>NEXT</button>
                         </div>
                     </form>
 
-                    <AwesomeSlider className="detail-image-holder">
-                        <div data-src={Icon} />
-                        <div data-src={Icon} />
-                        <div data-src={Icon} />
-                    </AwesomeSlider>
-                </div>
+
+
+
 
          );
     }
