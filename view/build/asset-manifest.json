@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.2193ad9c.chunk.css",
-    "main.js": "/static/js/main.3ea8b8eb.chunk.js",
-    "main.js.map": "/static/js/main.3ea8b8eb.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.cd73cb1d.js",
-    "runtime~main.js.map": "/static/js/runtime~main.cd73cb1d.js.map",
-    "static/css/2.8247a749.chunk.css": "/static/css/2.8247a749.chunk.css",
-    "static/js/2.774d82df.chunk.js": "/static/js/2.774d82df.chunk.js",
-    "static/js/2.774d82df.chunk.js.map": "/static/js/2.774d82df.chunk.js.map",
+    "main.css": "/static/css/main.2abfd0ec.chunk.css",
+    "main.js": "/static/js/main.7e1fbdd7.chunk.js",
+    "main.js.map": "/static/js/main.7e1fbdd7.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.d9193ae2.js",
+    "runtime~main.js.map": "/static/js/runtime~main.d9193ae2.js.map",
+    "static/css/2.cef0db8e.chunk.css": "/static/css/2.cef0db8e.chunk.css",
+    "static/js/2.465020ea.chunk.js": "/static/js/2.465020ea.chunk.js",
+    "static/js/2.465020ea.chunk.js.map": "/static/js/2.465020ea.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.adf5e08e61e45cd138bdecd2abd911d2.js": "/precache-manifest.adf5e08e61e45cd138bdecd2abd911d2.js",
+    "precache-manifest.84b22810f1949ef157603cb930922d3d.js": "/precache-manifest.84b22810f1949ef157603cb930922d3d.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/2.8247a749.chunk.css.map": "/static/css/2.8247a749.chunk.css.map",
-    "static/css/main.2193ad9c.chunk.css.map": "/static/css/main.2193ad9c.chunk.css.map",
+    "static/css/2.cef0db8e.chunk.css.map": "/static/css/2.cef0db8e.chunk.css.map",
+    "static/css/main.2abfd0ec.chunk.css.map": "/static/css/main.2abfd0ec.chunk.css.map",
     "static/media/4.jpg": "/static/media/4.7ea17d9b.jpg",
     "static/media/styles.css": "/static/media/bus-station.7b48628b.jpeg",
-    "static/media/mtn.jpg": "/static/media/mtn.d37ea352.jpg"
+    "static/media/mtn.jpg": "/static/media/mtn.d37ea352.jpg",
+    "static/media/vip.jpg": "/static/media/vip.6b1ab87d.jpg",
+    "static/media/vip_2.jpg": "/static/media/vip_2.cfbd5195.jpg"
   }
 }

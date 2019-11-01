@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
- import DatePicker from 'react-datepicker';
-// import moment from 'moment';
- import $ from "jquery";
+import DatePicker from 'react-datepicker';
+import {connect} from 'react-redux';
+import $ from "jquery";
+import {setBus} from './../redux/action/index';
 
 class Details extends Component {
 
@@ -13,8 +14,8 @@ class Details extends Component {
             this.handleChange = this.handleChange.bind(this);
             this.changeBus = this.changeBus.bind(this);
             this.state = {
-                startDate: new Date(),
-                buses : 'VIP'
+                startDate: new Date()
+
             };
         }
 
@@ -33,9 +34,8 @@ class Details extends Component {
 
     changeBus(e){
            let model;
-           this.setState({
-               buses: e.target.value
-           });
+
+           this.props.onSetBus(e);
             switch (e.target.value) {
                 case 'VIP':
                        model = ['Asford', 'Dalex', 'Runbat'];
@@ -81,7 +81,7 @@ class Details extends Component {
                         <div className="detail-form-item">
                             <div>
                                 <label>Bus</label>
-                                <select className="form-control" id="buses" onChange={this.changeBus}/>
+                                <select className="form-control" id="buses" defaultValue={this.props.bus} onChange={this.changeBus}/>
                             </div>
                             <div>
                                 <label>Bus Type</label>
@@ -131,7 +131,7 @@ class Details extends Component {
                             </div>
                         </div>
                         <div className="btn-controllers">
-                            
+
                             <button className="btn btn-primary float-right" type="button" onClick={() => this.onNextItem('personal')}>NEXT</button>
                         </div>
                     </form>
@@ -144,4 +144,22 @@ class Details extends Component {
     }
 }
 
-export default Details;
+export const mapDispatchToProps = (dispatch) => {
+  return {
+
+      onSetBus : (e) => {
+          dispatch(setBus(e))
+      }
+    }
+};
+
+export const mapStateToProps = (state) => {
+  return {
+
+        bus : state.details.bus,
+
+      }
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Details);

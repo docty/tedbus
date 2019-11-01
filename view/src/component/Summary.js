@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import {connect} from 'react-redux';
 
 class Summary extends Component {
 
@@ -17,12 +17,12 @@ class Summary extends Component {
         return (
 
             <form className="detail-form">
-                  <div className="detail-form-item">
+
                       <div>
-                          <label>Full Name </label><br/>
-                          <label>Contact </label><br/>
-                          <label>Email </label><br/>
-                          <label>Bus </label><br/>
+                          <label>Full Name : {this.props.valueChange.surname + " " + this.props.valueChange.firstname}</label>  <br/>
+                          <label>Contact : {this.props.valueChange.phonenumber}</label><br/>
+                          <label>Email : {this.props.valueChange.email}  </label><br/>
+                          <label>Bus : {this.props.bus}</label><br/>
                           <label>Bus Type </label><br/>
                           <label>Number of Passangers </label><br/>
                           <label>Luggage </label><br/>
@@ -32,7 +32,7 @@ class Summary extends Component {
                           <label>Payment Method </label><br/>
                           <label>Ticket Reference </label><br/>
                       </div>
-                  </div>
+
                   <div className="btn-controllers">
                       <button className="btn btn-primary float-left" type="button" onClick={() => this.onNextItem('payment')}>BACK</button>
                       <button className="btn btn-primary float-right" type="button" >SUBMIT</button>
@@ -42,4 +42,13 @@ class Summary extends Component {
     }
 }
 
-export default Summary;
+export const mapStateToProps = (state) => {
+  return {
+
+        valueChange : state.personal.valueChange,
+        bus : state.details.bus
+
+      }
+};
+
+export default connect(mapStateToProps, null)(Summary);
