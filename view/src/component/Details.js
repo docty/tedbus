@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import DatePicker from 'react-datepicker';
 import {connect} from 'react-redux';
 import $ from "jquery";
-import {setBus} from './../redux/action/index';
+import {setBus, changePassenger, setBusType, setBusTime} from './../redux/action/index';
 
 class Details extends Component {
 
@@ -11,6 +11,7 @@ class Details extends Component {
         constructor(props){
             super(props);
             this.onNextItem = this.onNextItem.bind(this);
+
             this.handleChange = this.handleChange.bind(this);
             this.changeBus = this.changeBus.bind(this);
             this.state = {
@@ -54,10 +55,13 @@ class Details extends Component {
                       model = ['Asford', 'Dalex', 'Runbat'];
             }
             $('#buses_model').empty();
+            this.props.onSetBusType(model[0]);
         for (let i = 0; i < model.length; i++){
             $("#buses_model").append(new Option(model[i], model[i]));
         }
     }
+
+
 
 
     onNextItem(e){
@@ -85,7 +89,7 @@ class Details extends Component {
                             </div>
                             <div>
                                 <label>Bus Type</label>
-                                <select className="form-control" style={{width: '120px'}} id="buses_model"/>
+                                <select className="form-control" style={{width: '120px'}} id="buses_model" onChange={(e) => this.props.onSetBusType(e.target.value)}/>
                             </div>
                             <div>
                                 <label>Price</label>
@@ -104,7 +108,16 @@ class Details extends Component {
                             </div>
                             <div>
                                 <label>Time</label>
-                                <input className="form-control" placeholder="Select time"/>
+                                <select className="form-control" onChange={(e) => this.props.onSetBusTime(e)}>
+                                    <option value="04 : 00">04 : 00</option>
+                                    <option value="06 : 00">06 : 00</option>
+                                    <option value="09 : 00">09 : 00</option>
+                                    <option value="12 : 00">12 : 00</option>
+                                    <option value="14 : 00">14 : 00</option>
+                                    <option value="16 : 00">16 : 00</option>
+                                    <option value="19 : 00">19 : 00</option>
+                                    <option value="21 : 00">21 : 00</option>
+                                </select>
                              </div>
                             <div>
                                 <label>Pick up point</label>
@@ -115,12 +128,14 @@ class Details extends Component {
                             </div>
                         </div>
                         <div className="detail-form-item">
-                            <div className="detail-passengers"><label>Number of Passengers</label><select
-                                className="form-control">
-                                <option value="1"  >1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select></div>
+                            <div className="detail-passengers">
+                                <label>Number of Passengers</label>
+                                <select className="form-control" id="passengers_no" onChange={(e) => this.props.onChangePassenger(e)}>
+                                    <option value="1"  >1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
                             <div className="detail-luggage"><label>Luggage</label>
                                 <div className="form-check"><input className="form-check-input" type="radio"
                                                                    name="luggage" id="formCheck-2"/><label
@@ -149,6 +164,15 @@ export const mapDispatchToProps = (dispatch) => {
 
       onSetBus : (e) => {
           dispatch(setBus(e))
+      },
+      onChangePassenger : (e) => {
+          dispatch(changePassenger(e))
+      },
+      onSetBusType : (e) => {
+          dispatch(setBusType(e));
+      },
+      onSetBusTime : (e) => {
+          dispatch(setBusTime(e));
       }
     }
 };
@@ -157,7 +181,9 @@ export const mapStateToProps = (state) => {
   return {
 
         bus : state.details.bus,
-
+        bustype : state.details.bustype,
+        passengers : state.details.passengers,
+        bustime : state.details.time
       }
 };
 

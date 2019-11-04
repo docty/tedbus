@@ -23,10 +23,10 @@ class Summary extends Component {
                           <label>Contact : {this.props.valueChange.phonenumber}</label><br/>
                           <label>Email : {this.props.valueChange.email}  </label><br/>
                           <label>Bus : {this.props.bus}</label><br/>
-                          <label>Bus Type </label><br/>
-                          <label>Number of Passangers </label><br/>
+                          <label>Bus Type : {this.props.bustype} </label><br/>
+                          <label>Number of Passangers :  {this.props.passengers}</label><br/>
                           <label>Luggage </label><br/>
-                          <label>Date / Time </label><br/>
+                          <label>Date / Time :   {this.props.year} - {this.props.month} - {this.props.day} / {this.props.bustime}</label><br/>
                           <label>Pickup point </label><br/>
                           <label>Price </label><br/>
                           <label>Payment Method </label><br/>
@@ -46,7 +46,13 @@ export const mapStateToProps = (state) => {
   return {
 
         valueChange : state.personal.valueChange,
-        bus : state.details.bus
+        bus : state.details.bus,
+        passengers : state.details.passengers,
+        bustype : state.details.bustype,
+        year : state.details.date.year,
+        month : state.details.date.month,
+        day : state.details.date.day,
+        bustime : state.details.time
 
       }
 };
