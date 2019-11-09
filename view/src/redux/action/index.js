@@ -42,3 +42,23 @@ export function setBusTime(item){
 
     }
 }
+
+export function changeLuggage(){
+    return {
+        type: types.DETAILS_LUGGAGE
+    }
+}
+
+export function changePickup(item){
+    return {
+        type: types.DETAILS_PICKUP,
+        payload : item.target.value
+    }
+}
+
+export function setPrice(item){
+    return {
+        type: types.DETAILS_PRICE,
+        payload : item
+    }
+}

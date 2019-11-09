@@ -25,10 +25,10 @@ class Summary extends Component {
                           <label>Bus : {this.props.bus}</label><br/>
                           <label>Bus Type : {this.props.bustype} </label><br/>
                           <label>Number of Passangers :  {this.props.passengers}</label><br/>
-                          <label>Luggage </label><br/>
+                          <label>Luggage : {!this.props.luggage === true ? 'Yes' : 'No'} </label><br/>
                           <label>Date / Time :   {this.props.year} - {this.props.month} - {this.props.day} / {this.props.bustime}</label><br/>
-                          <label>Pickup point </label><br/>
-                          <label>Price </label><br/>
+                          <label>Pickup point : {this.props.pickup} </label><br/>
+                          <label>Price : GHC {this.props.price} </label><br/>
                           <label>Payment Method </label><br/>
                           <label>Ticket Reference </label><br/>
                       </div>
@@ -52,8 +52,10 @@ export const mapStateToProps = (state) => {
         year : state.details.date.year,
         month : state.details.date.month,
         day : state.details.date.day,
-        bustime : state.details.time
-
+        bustime : state.details.time,
+        luggage : state.details.luggage,
+        pickup : state.details.pickup,
+        price : state.details.price
       }
 };
 

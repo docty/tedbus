@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import DatePicker from 'react-datepicker';
 import {connect} from 'react-redux';
 import $ from "jquery";
-import {setBus, changePassenger, setBusType, setBusTime} from './../redux/action/index';
+import {setBus, changePassenger, setBusType, setBusTime, changeLuggage, changePickup,
+setPrice} from './../redux/action/index';
 
 class Details extends Component {
 
@@ -21,15 +22,15 @@ class Details extends Component {
         }
 
     componentDidMount() {
-        const buses = ['VIP', 'STC', 'M3 Express'];
-        const model = ['Asford', 'Dalex', 'Runbat'];
+        const buses = ['Select A Bus', 'VIP', 'STC', '2M Express'];
+        const model = ['', 'Asford', 'Dalex', 'Runbat'];
         for (let i = 0; i < buses.length; i++){
             $("#buses").append(new Option(buses[i], buses[i]));
         }
         for (let i = 0; i < model.length; i++){
             $("#buses_model").append(new Option(model[i], model[i]));
         }
-        $('#price').val('GHC 55.00');
+
 
         }
 
@@ -37,23 +38,26 @@ class Details extends Component {
            let model;
 
            this.props.onSetBus(e);
+           let busPrice = '0';
             switch (e.target.value) {
                 case 'VIP':
                        model = ['Asford', 'Dalex', 'Runbat'];
-                       $('#price').val('GHC 55.00');
-
+                       busPrice = '55.00';
                        break;
                 case 'STC':
                        model = ['Flat', 'Broad', 'Coach'];
-                       $('#price').val('GHC 50.00');
+                       busPrice = '50.00';
                        break;
-                case 'M3 Express':
+                case '2M Express':
+                      busPrice = '45.00';
                       model = ['Opener', 'Closed', 'Euro'];
-                       $('#price').val('GHC 45.00');
                       break;
                 default:
+                      busPrice = '55.00';
                       model = ['Asford', 'Dalex', 'Runbat'];
             }
+            $('#price').val('GHC ' + busPrice);
+            this.props.onSetPrice(busPrice);
             $('#buses_model').empty();
             this.props.onSetBusType(model[0]);
         for (let i = 0; i < model.length; i++){
@@ -85,7 +89,7 @@ class Details extends Component {
                         <div className="detail-form-item">
                             <div>
                                 <label>Bus</label>
-                                <select className="form-control" id="buses" defaultValue={this.props.bus} onChange={this.changeBus}/>
+                                <select className="form-control" id="buses"defaultValue={this.props.bus}  onChange={(e) => this.changeBus(e)}/>
                             </div>
                             <div>
                                 <label>Bus Type</label>
@@ -93,7 +97,7 @@ class Details extends Component {
                             </div>
                             <div>
                                 <label>Price</label>
-                                <input className="form-control" type="text" disabled id="price" placeholder="Default Price"/>
+                                <input className="form-control" type="text" disabled id="price" placeholder="Default Price" value={this.props.price}/>
                             </div>
                         </div>
                         <div className="detail-form-item">
@@ -108,7 +112,8 @@ class Details extends Component {
                             </div>
                             <div>
                                 <label>Time</label>
-                                <select className="form-control" onChange={(e) => this.props.onSetBusTime(e)}>
+                                <select className="form-control" defaultValue={this.props.bustime} onChange={(e) => this.props.onSetBusTime(e)}>
+                                    <option value="null">Select Your Time</option>
                                     <option value="04 : 00">04 : 00</option>
                                     <option value="06 : 00">06 : 00</option>
                                     <option value="09 : 00">09 : 00</option>
@@ -121,28 +126,31 @@ class Details extends Component {
                              </div>
                             <div>
                                 <label>Pick up point</label>
-                                <select className="form-control">
-                                    <option value="am" >Asafo Market</option>
-                                    <option value="ts">Tech Station</option>
+                                <select className="form-control" defaultValue={this.props.pickup} onChange={(e) => this.props.onChangePickup(e)}>
+                                    <option value="null">Select Your Pickup Point</option>
+                                    <option value="Asafo Market"  >Asafo Market</option>
+                                    <option value="Tech Station">Tech Station</option>
                                 </select>
                             </div>
                         </div>
                         <div className="detail-form-item">
                             <div className="detail-passengers">
                                 <label>Number of Passengers</label>
-                                <select className="form-control" id="passengers_no" onChange={(e) => this.props.onChangePassenger(e)}>
+                                <select className="form-control" defaultValue={this.props.passengers} id="passengers_no" onChange={(e) => this.props.onChangePassenger(e)}>
                                     <option value="1"  >1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                 </select>
                             </div>
                             <div className="detail-luggage"><label>Luggage</label>
-                                <div className="form-check"><input className="form-check-input" type="radio"
-                                                                   name="luggage" id="formCheck-2"/><label
-                                    className="form-check-label" htmlFor="formCheck-2">Yes</label></div>
-                                <div className="form-check"><input className="form-check-input" type="radio"
-                                                                   name="luggage" id="formCheck-3"/><label
-                                    className="form-check-label" htmlFor="formCheck-3">No</label></div>
+                                <div className="form-check">
+                                    <input className="form-check-input" type="radio" onChange={() => this.props.onChangeLuggage()} name="luggage" id="formCheck-2" checked={!this.props.luggage}/>
+                                    <label className="form-check-label" htmlFor="formCheck-2">Yes</label>
+                                </div>
+                                <div className="form-check">
+                                    <input className="form-check-input" type="radio" onChange={() => this.props.onChangeLuggage()} name="luggage" id="formCheck-3" checked={this.props.luggage}   />
+                                    <label className="form-check-label" htmlFor="formCheck-3">No</label>
+                                </div>
                             </div>
                         </div>
                         <div className="btn-controllers">
@@ -173,6 +181,15 @@ export const mapDispatchToProps = (dispatch) => {
       },
       onSetBusTime : (e) => {
           dispatch(setBusTime(e));
+      },
+      onChangeLuggage : () => {
+          dispatch(changeLuggage());
+      },
+      onChangePickup : (e) => {
+          dispatch(changePickup(e));
+      },
+      onSetPrice : (e) => {
+          dispatch(setPrice(e));
       }
     }
 };
@@ -183,7 +200,9 @@ export const mapStateToProps = (state) => {
         bus : state.details.bus,
         bustype : state.details.bustype,
         passengers : state.details.passengers,
-        bustime : state.details.time
+        bustime : state.details.time,
+        luggage : state.details.luggage,
+        pickup : state.details.pickup
       }
 };
 
