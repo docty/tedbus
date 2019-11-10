@@ -62,3 +62,11 @@ export function setPrice(item){
         payload : item
     }
 }
+
+export function setPaymentChange(item) {
+    return {
+        type: types.PAYMENT_METHOD,
+        payload : item.target.value
+
+    }
+}

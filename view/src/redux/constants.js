@@ -7,3 +7,4 @@ export const DETAILS_TIME = 'detailsTime';
 export const DETAILS_LUGGAGE = 'detailsLuggage';
 export const DETAILS_PICKUP = 'detailsPickup';
 export const DETAILS_PRICE = 'detailsPrice';
+export const PAYMENT_METHOD = 'paymentMethod';

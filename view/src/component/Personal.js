@@ -11,7 +11,7 @@ class Personal extends Component {
         super(props);
         this.onNextItem = this.onNextItem.bind(this);
         this.onValueChange = this.onValueChange.bind(this);
-         
+
     }
 
     onValueChange(e){
@@ -36,7 +36,7 @@ class Personal extends Component {
                                 <label   className="form-check-label" htmlFor="formCheck-2">Use previous details</label>
                             </div>
                             <div className="form-check">
-                                <input className="form-check-input" type="radio" name="identity" id="formCheck-3"  />
+                                <input className="form-check-input" type="radio" checked={true} name="identity" id="formCheck-3"  />
                                 <label className="form-check-label" htmlFor="formCheck-3">I am a new User</label>
                             </div>
                         </div>

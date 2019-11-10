@@ -8,8 +8,8 @@ DETAILS_LUGGAGE, DETAILS_PICKUP, DETAILS_PRICE } from './../constants';
 
 const initialState = {
 
-  bus :  'VIP',
-  bustype : 'Asford',
+  bus :  '',
+  bustype : '',
   passengers : '1',
   date : {year :new Date().getUTCFullYear(), month : new Date().getUTCMonth()+1, day : new Date().getUTCDate()},
   time : '',

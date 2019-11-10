@@ -22,14 +22,16 @@ class Details extends Component {
         }
 
     componentDidMount() {
-        const buses = ['Select A Bus', 'VIP', 'STC', '2M Express'];
-        const model = ['', 'Asford', 'Dalex', 'Runbat'];
-        for (let i = 0; i < buses.length; i++){
-            $("#buses").append(new Option(buses[i], buses[i]));
-        }
-        for (let i = 0; i < model.length; i++){
-            $("#buses_model").append(new Option(model[i], model[i]));
-        }
+        // const buses = ['VIP', 'STC', '2M Express'];
+        // const model = ['', 'Asford', 'Dalex', 'Runbat'];
+        // for (let i = 0; i < buses.length; i++){
+        //
+        //     $("#buses").append(new Option(buses[i], buses[i]));
+        //
+        // }
+        // for (let i = 0; i < model.length; i++){
+        //     $("#buses_model").append(new Option(model[i], model[i]));
+        // }
 
 
         }
@@ -56,7 +58,7 @@ class Details extends Component {
                       busPrice = '55.00';
                       model = ['Asford', 'Dalex', 'Runbat'];
             }
-            $('#price').val('GHC ' + busPrice);
+
             this.props.onSetPrice(busPrice);
             $('#buses_model').empty();
             this.props.onSetBusType(model[0]);
@@ -89,15 +91,20 @@ class Details extends Component {
                         <div className="detail-form-item">
                             <div>
                                 <label>Bus</label>
-                                <select className="form-control" id="buses"defaultValue={this.props.bus}  onChange={(e) => this.changeBus(e)}/>
+                                <select className="form-control" id="buses" defaultValue={this.props.bus}  onChange={(e) => this.changeBus(e)}>
+                                    <option disabled selected={true}>Select A Bus</option>
+                                    <option value='VIP'>VIP</option>
+                                    <option value='STC'>STC</option>
+                                    <option value='2M Express'>2M Express</option>
+                                </select>
                             </div>
                             <div>
                                 <label>Bus Type</label>
-                                <select className="form-control" style={{width: '120px'}} id="buses_model" onChange={(e) => this.props.onSetBusType(e.target.value)}/>
+                                <select className="form-control" defaultValue={this.props.bustype} disabled={this.props.bus === '' ? true : false } style={{width: '120px'}} id="buses_model" onChange={(e) => this.props.onSetBusType(e.target.value)}/>
                             </div>
                             <div>
                                 <label>Price</label>
-                                <input className="form-control" type="text" disabled id="price" placeholder="Default Price" value={this.props.price}/>
+                                <input className="form-control" type="text" disabled id="price" placeholder="Default Price" value={'GHC ' +  this.props.price}/>
                             </div>
                         </div>
                         <div className="detail-form-item">
@@ -202,7 +209,8 @@ export const mapStateToProps = (state) => {
         passengers : state.details.passengers,
         bustime : state.details.time,
         luggage : state.details.luggage,
-        pickup : state.details.pickup
+        pickup : state.details.pickup,
+        price : state.details.price
       }
 };
 
