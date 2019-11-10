@@ -1,34 +1,109 @@
 body {
+overflow-x: hidden;
+}
+
+
+.container_body{
   background-image:linear-gradient(rgba(28, 24, 24, 0.7), rgba(81, 81, 81, 0.7)), url("../Image/bus-station.jpeg");
   background-size:cover;
   background-repeat:no-repeat;
-  overflow:hidden;
-  height:984px;
-}
-
-body {
-  margin:0 20px;
-}
-
-.container-wrapper {
-  padding:15% 10%;
+  padding:12.5% 10%;
   display:flex;
   flex-direction:column;
   justify-content:center;
-  align-items:stretch;
+  align-items: center;
 }
 
-.container-wrapper > h1 {
-  color:rgb(255, 255, 255);
+.item_intro  {
+  list-style-type: none;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+}
+
+.item_intro > li {
+  margin-left: 5px;
+  border : 3px solid #150700;
+  padding : 5px;
+  color : white
+
+}
+
+.feature {
+  list-style-type: square;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+
+  background-color: #FFF3EE;
+  box-shadow: 1px 1px 4px #050100
+}
+
+.feature > li {
+  margin-left: 5px;
+  font-size: 20px;
+  padding : 10px;
+
+
+}
+
+.welcome_message {
+  color: #76FF12;
+  font-family: MV Boli;
+}
+
+.btn_book {
+  background-color: #0077B8;
+  padding: 10px 20px;
+  color : white;
+
+}
+.btn_book:hover{
+  text-decoration: none;
+}
+
+
+.container_body > h1 , .container_body > h6  {
+
   text-align:center;
-  margin-bottom:20px;
+  margin-bottom:25px;
+}
+.container_body > h6{
+  color : white
 }
 
+.banner_1_1, .banner_1_2, .footer{
+  padding : 5% 13%
+}
+
+.booking_home{
+  background-color: #FFF3EE;
+  box-shadow: 1px 1px 4px #050100;
+  padding : 5% ;
+}
+.banner1_image{
+  width: 30%
+}
+.banner1_image_small{
+  width : 40%
+}
+.banner1_image_big{
+  width : 60%
+}
+.footer_item {
+  font-style: italic;
+  margin-left: 15px
+}
 .base-form {
   background-color:rgba(222, 218, 217, 0.72);
   padding:1% 2% 2%;
   border-radius:10px;
   margin:0 10%;
+}
+.footer {
+  color : white;
+  background-color: black;
+
 }
 
 @media (min-width: 300px) {
@@ -182,4 +257,3 @@ body {
   background-color:#9c711e;
   color:rgb(255,255,255);
 }
-
