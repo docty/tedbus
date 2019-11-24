@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import axios from 'axios';
 
 class Summary extends Component {
 
@@ -15,7 +16,19 @@ class Summary extends Component {
 
     onFormSubmit(){
         let message = 'Thank you \n ' + this.props.valueChange.firstname + '\n for booking from Tedbus. \n Reference Id is 035c';
-        alert(message);
+        axios.post('http://localhost:8100/api/requestform',{
+          surname: 'eric test',
+          firstname : 'eric name',
+          contact: '050546532',
+          email : 'kobi@test.com'
+        })
+          .then(function (response){
+              alert(message);
+          })
+          .catch( function (error){
+            // Describe error!
+          });
+
     }
 
     render() {

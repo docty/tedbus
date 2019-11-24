@@ -1,5 +1,6 @@
 import React from 'react'
 import $ from 'jquery';
+import Icon from '../Image/icon.jpg';
 import Secured from '../Image/secured.png';
 import Guarantee from '../Image/guarantee.jpg';
 import Safety from '../Image/safety.jpg';
@@ -100,6 +101,7 @@ class HomePage extends React.Component {
             <div className="row banner_1_2">
                 <div className="col-lg-6" style={{fontFamily: 'Myanmar Text', fontWeight: 'bold'}}>
                     <h5>TedBus</h5>
+                    <img className="banner1_image" src={Icon} alt="TedBus"  />
                     <p style={{color : 'black', padding : 0}}>Your safety ride is our main priority </p>
                     <p >Never Rush To The Bus Station.</p>
                     <p >With TedBus, Your Journey Is Covered</p>
