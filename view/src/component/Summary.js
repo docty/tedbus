@@ -17,10 +17,10 @@ class Summary extends Component {
     onFormSubmit(){
         let message = 'Thank you \n ' + this.props.valueChange.firstname + '\n for booking from Tedbus. \n Reference Id is 035c';
         axios.post('http://localhost:8100/api/requestform',{
-          surname: 'eric test',
-          firstname : 'eric name',
-          contact: '050546532',
-          email : 'kobi@test.com'
+          surname: this.props.valueChange.surname,
+          firstname : this.props.valueChange.firstname,
+          contact: this.props.valueChange.phonenumber,
+          email : this.props.valueChange.email
         })
           .then(function (response){
               alert(message);

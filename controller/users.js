@@ -13,10 +13,10 @@ class User {
     }
 
     static create(req, res) {
-        let data = {surname: 'surname', firstname:'firstname', contact:'contact',email:'email'};
-        return Users.create(data)
+
+        return Users.create(req.body)
                   .then(book => res.status(201).send({
-                    message: 'Task been created successfully'
+                    message: 'Booking successful'
 
                   }))
         }

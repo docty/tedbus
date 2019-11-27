@@ -1,2 +1,2 @@
 Link the image gallery to bus model
-Submit data into database
+create database for bus details
