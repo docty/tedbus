@@ -33,7 +33,7 @@ class Personal extends Component {
                         <div >
                             <div className="form-check">
                                 <input className="form-check-input" type="radio" name="identity" id="formCheck-2"/>
-                                <label   className="form-check-label" htmlFor="formCheck-2">Use previous details</label>
+                                <label   className="form-check-label" htmlFor="formCheck-2">An Existing User</label>
                             </div>
                             <div className="form-check">
                                 <input className="form-check-input" type="radio" checked={true} name="identity" id="formCheck-3"  />

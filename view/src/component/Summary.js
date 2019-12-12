@@ -14,8 +14,8 @@ class Summary extends Component {
         this.props.changeForm(e);
     }
 
-    onFormSubmit(){
-        let message = 'Thank you \n ' + this.props.valueChange.firstname + '\n for booking from Tedbus. \n Reference Id is 035c';
+
+    formRequest(){
         axios.post('http://localhost:8100/api/requestform',{
           surname: this.props.valueChange.surname,
           firstname : this.props.valueChange.firstname,
@@ -23,11 +23,37 @@ class Summary extends Component {
           email : this.props.valueChange.email
         })
           .then(function (response){
-              alert(message);
+              alert(response);
           })
           .catch( function (error){
             // Describe error!
           });
+
+    }
+
+    busRequest(){
+        axios.post('http://localhost:8100/api/bus_identity',{
+          busname: this.props.bus,
+          bustype : this.props.bustype,
+          price: this.props.price,
+          date : this.props.year+'-'+this.props.month+'-'+this.props.day,
+          time : this.props.bustime,
+          pip : this.props.pickup,
+          nop : this.props.passengers,
+          luggage : !this.props.luggage === true ? 'Yes' : 'No'
+        })
+          .then(function (response){
+              //alert(response);
+          })
+          .catch( function (error){
+            // Describe error!
+          });
+    }
+    onFormSubmit(){
+        let message = 'Thank you \n ' + this.props.valueChange.firstname + '\n for booking from Tedbus. \n Reference Id is 035c';
+        this.formRequest();
+        this.busRequest();
+        alert(message)
 
     }
 
