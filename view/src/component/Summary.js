@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
+import uuidv4  from 'uuid/v4';
+import cookie from 'react-cookies'
 
 class Summary extends Component {
 
@@ -14,9 +16,17 @@ class Summary extends Component {
         this.props.changeForm(e);
     }
 
+    componentDidMount() {
+        this.setState({
+              userId: cookie.load('firstname')
+        });
 
-    formRequest(){
+        //console.log(this.state.userId);
+    }
+
+    formRequest(uuid){
         axios.post('http://localhost:8100/api/requestform',{
+          userId : uuid,
           surname: this.props.valueChange.surname,
           firstname : this.props.valueChange.firstname,
           contact: this.props.valueChange.phonenumber,
@@ -31,8 +41,9 @@ class Summary extends Component {
 
     }
 
-    busRequest(){
+    busRequest(uuid){
         axios.post('http://localhost:8100/api/bus_identity',{
+          userId : uuid,
           busname: this.props.bus,
           bustype : this.props.bustype,
           price: this.props.price,
@@ -49,10 +60,19 @@ class Summary extends Component {
             // Describe error!
           });
     }
+
+    saveToCookie(){
+        cookie.save("tedbus_firstname" , this.props.valueChange.firstname, { path: '/' });
+        cookie.save("tedbus_surname" , this.props.valueChange.surname, { path: '/' })
+        cookie.save("tedbus_contact" , this.props.valueChange.phonenumber, { path: '/' })
+        cookie.save("tedbus_email" , this.props.valueChange.email, { path: '/' })
+    }
     onFormSubmit(){
-        let message = 'Thank you \n ' + this.props.valueChange.firstname + '\n for booking from Tedbus. \n Reference Id is 035c';
-        this.formRequest();
-        this.busRequest();
+        let uuid = uuidv4();
+        let message = 'Thank you \n ' + this.props.valueChange.firstname + '\n for booking from Tedbus. \n Reference Id is 035c ' + uuid ;
+        this.formRequest(uuid);
+        this.busRequest(uuid);
+        this.saveToCookie();
         alert(message)
 
     }

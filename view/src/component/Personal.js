@@ -11,9 +11,12 @@ class Personal extends Component {
         super(props);
         this.onNextItem = this.onNextItem.bind(this);
         this.onValueChange = this.onValueChange.bind(this);
-
+        this.onSiteChanged  = this.onSiteChanged.bind(this);
     }
 
+    onSiteChanged(){
+        alert("PPP");
+    }
     onValueChange(e){
 
         this.props.onValueChange(e);
@@ -30,9 +33,9 @@ class Personal extends Component {
 
                 <form className="detail-form">
                     <div style={{paddingBottom:'4%'}}>
-                        <div >
+                        <div  onChange={(event) => this.onSiteChanged()}>
                             <div className="form-check">
-                                <input className="form-check-input" type="radio" name="identity" id="formCheck-2"/>
+                                <input className="form-check-input" type="radio" name="identity" id="formCheck-2" />
                                 <label   className="form-check-label" htmlFor="formCheck-2">An Existing User</label>
                             </div>
                             <div className="form-check">
