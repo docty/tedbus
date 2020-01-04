@@ -1,2 +1,2 @@
 Link the image gallery to bus model
-create database for bus details
+check if radio button is clicked and then load cookies where necessary;

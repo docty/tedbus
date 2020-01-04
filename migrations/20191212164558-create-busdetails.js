@@ -8,6 +8,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      userId: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        references: {         // User hasMany WorkingDays n:n
+          model: 'Users',
+          key: 'userId'
+        }
+      },
       busname: {
         type: Sequelize.STRING
       },

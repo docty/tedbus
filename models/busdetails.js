@@ -1,6 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Busdetails = sequelize.define('Busdetails', {
+    userId : DataTypes.STRING,
     busname: DataTypes.STRING,
     bustype: DataTypes.STRING,
     price: DataTypes.STRING,
@@ -12,6 +13,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Busdetails.associate = function(models) {
     // associations can be defined here
+    Busdetails.belongsTo(models.Users, {foreignKey: 'userId'});
+
   };
   return Busdetails;
 };
