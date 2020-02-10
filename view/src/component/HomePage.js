@@ -1,9 +1,12 @@
 import React from 'react'
 import $ from 'jquery';
+import HeaderTab from './HeaderTab';
+import MainBanner from './MainBanner';
+import Features from './Features';
+import Forts from './Forts';
+import Footer from './Footer';
+
 import Icon from '../Image/icon.jpg';
-import Secured from '../Image/secured.png';
-import Guarantee from '../Image/guarantee.jpg';
-import Safety from '../Image/safety.jpg';
 import Late from '../Image/late.jpg';
 
 class HomePage extends React.Component {
@@ -68,78 +71,48 @@ class HomePage extends React.Component {
     render() {
     return (
         <div>
-            <div className="container_body">
-                <h1 className="welcome_message">WELCOME TO TEDBUS</h1>
-                <h6>Enjoy your journey with us as we ensure your safety</h6>
-                <h6>Do you want to </h6>
-                <ul className="item_intro">
-                    <li>Book For Individual</li>
-                    <li>Book For Event</li>
-                    <li>Know The Bus You Board</li>
-                </ul>
-                <a  className="btn_book" type="button" href="#booking_home">BOOK NOW</a>
-            </div>
-            <div className="row banner_1_1">
-                <div className="col-lg-6">
-                    <h4>TedBus is an online bus booking platform which allows users to primarily book for bus.</h4>
-                    <img className="banner1_image" src={Secured} alt="secured"  />
-                    <img className="banner1_image_small" src={Guarantee} alt="secured"  />
-                    <img className="banner1_image" src={Safety} alt="secured"  />
-                </div>
-                <div className="col-lg-6">
-                    <h4> Features</h4>
-                    <ul className="feature">
-                        <li>Free Luggage</li>
-                        <li>Easy Booking</li>
-                        <li>Preferred Pickup Point</li>
-                        <li>Special Bonus For New Users</li>
-                        <li>100% Saftey And Comfortability</li>
-                    </ul>
-                </div>
-            </div>
+
+              <div id="preloader">
+                  <div class="jumper">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                  </div>
+              </div>
+              <HeaderTab/>
+              <MainBanner/>
+              <Features/>
+              <div class="fun-facts">
+                  <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                           <div class="left-content">
+                             <span>TEDBUS</span>
+                             <h2>Your safety ride is our <em> main priority</em></h2>
+                             <p>TEDBUS is making travelling very easy and fast. We are always ready to ensure your safety journey. Never rush to the bus station for we just got you covered.
+                             <br/><br/> Book a bus for an event, educational trip, excursion, vacation. You can book as an individual or as a group.</p>
+
+                           </div>
+                         </div>
+                        <div class="col-md-6 align-self-center">
+                            <div className="booking_home">
+                                <label  style={{color : 'black'}}> Origin</label>
+                                <select id="origin" onChange={this.changeOrigin} className="form-control" required=""> </select>
+                                <label style={{color : 'black'}}> Destination</label>
+                                <select id="destination" onChange={this.changeDestination}  className="form-control" required=""> </select>
+                                <button className="btn btn-primary" type="button" onClick={this.checkAvailability} style={{marginTop:'35px' , marginBottom: '20px'}}>Check Availability</button>
+                            </div>
+                        </div>
+                   </div>
+                 </div>
+             </div>
+
+
+
             <hr/>
-            <div className="row banner_1_2">
-                <div className="col-lg-6" style={{fontFamily: 'Myanmar Text', fontWeight: 'bold'}}>
-                    <h5>TedBus</h5>
-                    <img className="banner1_image" src={Icon} alt="TedBus"  />
-                    <p style={{color : 'black', padding : 0}}>Your safety ride is our main priority </p>
-                    <p >Never Rush To The Bus Station.</p>
-                    <p >With TedBus, Your Journey Is Covered</p>
-                    <img src={Late} className="banner1_image_big" alt="Late"/>
-                </div>
-                <div className="col-lg-6 " id="booking_home">
-                    <h5>Book From Here</h5>
-                    <div className="booking_home">
-                        <label> Origin</label>
-                        <select id="origin" onChange={this.changeOrigin} className="form-control" required=""> </select>
-                        <label> Destination</label>
-                        <select id="destination" onChange={this.changeDestination}  className="form-control" required=""> </select>
-                        <button className="btn btn-primary" type="button" onClick={this.checkAvailability} style={{marginTop:'35px' , marginBottom: '20px'}}>Check Availability</button>
-                    </div>
-                </div>
-            </div>
+            <Forts/>
             <hr/>
-            <div className="row footer">
-                <div className="col-lg-4">
-                    <h5>Address</h5>
-                    <h6>Location : <span className="footer_item">Ayeduase </span> </h6>
-                    <h6>Contact : <span className="footer_item"> +233 553 4790</span></h6>
-                    <h6>Email : <span className="footer_item"> support@tedbus.com </span></h6>
-                    <h6><span className="footer_item"> © 2019 </span></h6>
-                </div>
-                <div className="col-lg-4">
-                    <h5>Contact</h5>
-                    <h6>Name : <span className="footer_item">Eric Heckford Bryan </span> </h6>
-                    <h6>Contact : <span className="footer_item"> +233 553 4790</span></h6>
-                    <h6>Email : <span className="footer_item"> bryaneric9000@gmail.com </span></h6>
-                    <h6>Position :<span className="footer_item"> Founder </span></h6>
-                </div>
-                <div className="col-lg-4">
-                    <h5>Services</h5>
-                    <h6>Individual Booking </h6>
-                    <h6>Bulk Booking </h6>
-                </div>
-            </div>
+            <Footer/>
         </div>
     );
   }

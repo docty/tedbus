@@ -1,2 +1,2 @@
 Link the image gallery to bus model
-check if radio button is clicked and then load cookies where necessary;
+ Eric Heckford Bryan

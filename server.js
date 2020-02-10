@@ -26,6 +26,22 @@ app.get('/*', function (req, res) {
 app.post('/api/requestform', User.create);
 app.post('/api/bus_identity', Busdetail.create);
 
+axios.post('/user',{
+  firstName: 'code4mk',
+  lastName: 'Hello-laravel'
+})
+  .then(function (response){
+   //Getting data from response
+  })
+  .catch( function (error){
+    // Describe error!
+  });
+
+  app.post();
+  app.post('/apiuser/222fc5ce40e54bc8984784309a5f8eb5/apikey HTTP/1.1' , function (req, res) {
+
+  });
+
 app.listen(port, function() {
     console.log('connection successful on http://localhost:'+port);
 });
