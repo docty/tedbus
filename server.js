@@ -9,8 +9,8 @@ const port = process.env.PORT || 8100;
 
 
 
-const  User = require('./controller/users');
-const Busdetail = require('./controller/busdetails');
+//const  User = require('./controller/users');
+//const Busdetail = require('./controller/busdetails');
 
 app.use(express.static(path.join(__dirname , './view/build')));
 app.use(cors());
@@ -23,14 +23,11 @@ app.get('/*', function (req, res) {
 });
 
 
-app.post('/api/requestform', User.create);
-app.post('/api/bus_identity', Busdetail.create);
+//app.post('/api/requestform', User.create);
+//app.post('/api/bus_identity', Busdetail.create);
  
 
-  
-  app.post('/apiuser/222fc5ce40e54bc8984784309a5f8eb5/apikey HTTP/1.1' , function (req, res) {
-
-  });
+   
 
 app.listen(port, function() {
     console.log('connection successful on http://localhost:'+port);
