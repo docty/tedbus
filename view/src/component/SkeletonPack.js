@@ -1,9 +1,20 @@
 import React, { Component, PropTypes } from 'react';
-import DatePicker from 'react-datepicker';
+
 /**
  * SkeletonPack
  */
 export class SkeletonPack extends Component { // eslint-disable-line react/prefer-stateless-function
+
+
+          constructor(props){
+              super(props);
+
+              this.state = {
+                  startDate: new Date()
+
+              };
+          }
+
   render() {
     return (
       <div class="page-content" style={{backgroundImage: "url('images/wizard-v3.jpg')"}}>
@@ -23,38 +34,12 @@ export class SkeletonPack extends Component { // eslint-disable-line react/prefe
                  <section>
                      <div class="inner">
                         <h3>Booking Details:</h3>
-                        <div class="form-row form-row-date form-row-date-1">
-                          <div class="form-holder form-holder-2">
-                            <select name="bus" id="bus">
-                              <option value="Month" disabled selected>Bus</option>
-                              <option value="Vip">VIP</option>
-                              <option value="Stc">STC</option>
-                              <option value="2mexpress">2M EXPRESS</option>
-
-                            </select>
-                            <select name="year_1" id="year_1">
-                              <option value="Year" disabled selected>Year</option>
-                              <option value="2017">2017</option>
-                              <option value="2016">2016</option>
-                              <option value="2015">2015</option>
-                              <option value="2014">2014</option>
-                              <option value="2013">2013</option>
-                            </select>
-                            <div class="form-row">
-                              <div class="form-holder form-holder-2">
-                                <label class="form-row-inner">
-                                  <input type="text" name="price" id="price" class="form-control" required/>
-                                  <span class="label">Price</span>
-                                  <span class="border"></span>
-                                </label>
-                              </div>
+                        <div id="date-selection" className = "row">
+                            <div className = "col-md-6">
+                              <input type="text" placeholder="Departure date" class="form-control" name="dates" id="dates" data-select="datepicker"/>
                             </div>
-                          </div>
-                        </div>
-                        <div class="form-row form-row-date form-row-date-1">
-                            <label>Date</label>
-                            <DatePicker className="form-control" name="startDate"/>
-                            <select name="time" id="time">
+                            <div className = "col-md-6">
+                              <select name="time" id="time" class="form-control">
                               <option value="Year" disabled selected>Year</option>
                               <option value="2017">03:00</option>
                               <option value="2016">05:00</option>
@@ -64,8 +49,50 @@ export class SkeletonPack extends Component { // eslint-disable-line react/prefe
                               <option value="2012">16:00</option>
                               <option value="2011">19:00</option>
                               <option value="2010">22:00</option>
-                            </select>
+                              </select>
+                            </div>
                         </div>
+                        <div class="form-row ">
+                          <div class="form-holder form-holder-2 row">
+                            <div class="col-md-6">
+                              <select placeholder = "Bus" name="bus" id="bus">
+                                <option value="Month" disabled selected>Bus</option>
+                                <option value="Vip">VIP</option>
+                                <option value="Stc">STC</option>
+                                <option value="2mexpress">2M EXPRESS</option>
+
+                              </select>
+                            </div>
+                            <div class = "col-md-6">
+                              <input type="text" placeholder="Price" class="form-control" disabled/>
+                            </div>
+
+                          </div>
+                        </div>
+                        <div class="form-row ">
+                          <div class="form-holder form-holder-2 row">
+                            <div class="col-md-6">
+                              <label>Pickup Point </label>
+                              <select placeholder = "Bus" name="bus" id="pickuppoint">
+                                <option value="Month" disabled selected>Pickup Point</option>
+                                <option value="asafo">Asafo Station</option>
+                                <option value="tech">Tech Junction</option>
+                              </select>
+                            </div>
+                            <div class="col-md-6">
+                              <label>Number of passengers </label>
+                              <input type="text" defaultValue = "1" class="form-control" />
+                            </div>
+
+                          </div>
+                        </div>
+                        <div class="form-row">
+                 <div id="radio">
+                   <label>Luggage*: </label>
+                   <input type="radio" name="luggage" value="yes" checked="" class="radio-1"/> Yes
+                     <input type="radio" name="luggage" value="no"/> No
+                 </div>
+               </div>
                       </div>
                  </section>
 

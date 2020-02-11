@@ -6,12 +6,14 @@ import Payment from "./Payment";
 import Summary from "./Summary";
 import SkeletonPack from "./SkeletonPack";
 import Icon from '../Image/4.jpg';
+import BookHeaderTab from './BookHeaderTab';
+
 import Vip from '../Image/vip.jpg';
 import Vip_2 from '../Image/vip_2.jpg';
 import $ from "jquery";
 import Footer from './Footer';
 import AwesomeSlider from 'react-awesome-slider';
-import 'react-datepicker/dist/react-datepicker.css';
+
 
 class Skeleton extends Component {
 
@@ -42,6 +44,7 @@ class Skeleton extends Component {
     render() {
         return(
          <div>
+             <BookHeaderTab/>
              <SkeletonPack/>
              <Footer/>
 

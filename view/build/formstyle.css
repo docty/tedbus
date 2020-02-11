@@ -95,7 +95,7 @@ body {
 .form-register .steps li a .title span {
 	display: block;
 }
-.form-register .steps li a .title .step-icon { 
+.form-register .steps li a .title .step-icon {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -191,7 +191,7 @@ body {
     margin: 0;
     padding-bottom: 18px;
     padding-top: 5px;
-}	
+}
 .form-register .content .form-total-p-1 .inner h3 {
 	padding-bottom: 13px;
 	padding-top: 0;
@@ -207,7 +207,7 @@ body {
 }
 .inner .form-row {
     display: flex;
-    margin: 0 -12px;
+    margin: 15px -12px;
     position: relative;
 }
 .form-row.form-row-date.form-row-date-1 {
@@ -339,9 +339,9 @@ body {
     -ms-box-sizing: border-box;
 }
 .inner .form-row .form-holder input {
-	font-size: 18px;
-    color: #333;
-    font-weight: 700;
+
+
+
 }
 .inner .form-row .form-holder input#pay-1,
 .inner .form-row .form-holder input#pay-2 {
@@ -362,9 +362,9 @@ body {
 .inner .form-row .form-holder .form-control:focus,
 .inner .form-row .form-holder .form-control:valid {
 	border-bottom: 2px solid #24c1e8;
-	margin-top: 21px;
+	margin-top: 8px;
 }
-.inner .form-row .form-holder .form-control:focus + .label, 
+.inner .form-row .form-holder .form-control:focus + .label,
 .inner .form-row .form-holder .form-control:valid + .label {
 	transform: translateY(-23px) scale(1);
 	-o-transform: translateY(-23px) scale(1);
@@ -373,7 +373,7 @@ body {
 	-webkit-transform: translateY(-23px) scale(1);
 	color: #24c1e8;
 }
-.inner .form-row  .form-holder .form-control:focus  + .border, 
+.inner .form-row  .form-holder .form-control:focus  + .border,
 .inner .form-row  .form-holder .form-control:valid  + .border {
 	transform: scaleX(1);
 	-o-transform: scaleX(1);
@@ -519,11 +519,11 @@ body {
 	    width: 17.5%;
 	    margin-right: 20px;
 	}
-	.inner .form-row .form-holder label.pay-1-label, 
+	.inner .form-row .form-holder label.pay-1-label,
 	.inner .form-row .form-holder label.pay-2-label {
 		margin-bottom: 15px;
 	}
-} 
+}
 @media screen and (max-width: 575px) {
 	.wizard-v3-content {
 		width: 90%;
