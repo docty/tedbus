@@ -6,7 +6,7 @@ const MainHeader = (props) => {
     <header className="">
               <nav className="navbar navbar-expand-lg">
                  <div className="container">
-                       <a className="navbar-brand" href="index.html"><h2>TEDBUS</h2></a>
+                       <a className="navbar-brand" href="/"><h2>TEDBUS</h2></a>
                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                          <span className="navbar-toggler-icon"></span>
                        </button>
@@ -21,10 +21,10 @@ const MainHeader = (props) => {
                              <a className="nav-link" href="/about">About Us</a>
                            </li>
                            <li className="nav-item">
-                             <a className="nav-link" href="services.html">Our Services</a>
+                             <a className="nav-link" href="/services">Our Services</a>
                            </li>
                            <li className="nav-item">
-                             <a className="nav-link" href="contact.html">Contact Us</a>
+                             <a className="nav-link" href="/contact">Contact Us</a>
                            </li>
                            <li className="nav-item">
                              <a className="nav-link" href="#booking_home">Book Now</a>

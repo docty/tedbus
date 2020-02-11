@@ -10,6 +10,8 @@ import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
 
 import HomePage from './component/HomePage';
 import About from './component/About';
+import Contact from './component/Contact';
+import Service from './component/Service';
 import configureStore from './redux/store'
 import * as serviceWorker from './serviceWorker';
 import Skeleton from "./component/Skeleton";
@@ -20,8 +22,9 @@ const routing = (
             <Switch>
                 <Route exact path='/' component={HomePage}/>
                 <Route exact path='/about' component={About}/>
-                 <Route exact path='/detail' component={Skeleton}/>
-
+                <Route exact path='/detail' component={Skeleton}/>
+                <Route exact path='/contact' component={Contact}/>
+                <Route exact path='/Services' component={Service}/>
             </Switch>
         </Router>
     </Provider>
