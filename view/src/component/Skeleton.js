@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import 'react-awesome-slider/dist/styles.css';
-import Details from "./Details";
+ 
 import Personal from "./Personal";
 import Payment from "./Payment";
 import Summary from "./Summary";

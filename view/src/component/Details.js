@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import DatePicker from 'react-datepicker';
+ 
 import {connect} from 'react-redux';
 import $ from "jquery";
 import {setBus, changePassenger, setBusType, setBusTime, changeLuggage, changePickup,
@@ -110,12 +110,7 @@ class Details extends Component {
                         <div className="detail-form-item">
                             <div>
                                 <label>Date</label>
-                                <DatePicker className="form-control"
-                                    selected={ this.state.startDate }
-                                    onChange={ this.handleChange }
-                                    name="startDate"
-
-                                />
+                                
                             </div>
                             <div>
                                 <label>Time</label>

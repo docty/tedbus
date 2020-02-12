@@ -1,18 +1,27 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+
 
 /**
  * SkeletonPack
  */
-export class SkeletonPack extends Component { // eslint-disable-line react/prefer-stateless-function
+ class SkeletonPack extends Component { // eslint-disable-line react/prefer-stateless-function
 
 
-          constructor(props){
-              super(props);
+   constructor(props){
+         super(props);
 
-              this.state = {
-                  startDate: new Date()
+ 
+         this.changeBus = this.changeBus.bind(this);
+         this.state = {
+             startDate: new Date()
 
-              };
+         };
+     }
+
+        changeBus(e){
+
+                 alert('e.target.value');
+
           }
 
   render() {
@@ -31,6 +40,7 @@ export class SkeletonPack extends Component { // eslint-disable-line react/prefe
                    <span class="step-icon"><i class="zmdi zmdi-account"></i></span>
                    <span class="step-text">Booking</span>
                  </h2>
+                 <input onClick={(e) => this.changeBus(e)} />
                  <section>
                      <div class="inner">
                         <h3>Booking Details:</h3>
@@ -39,8 +49,8 @@ export class SkeletonPack extends Component { // eslint-disable-line react/prefe
                               <input type="text" placeholder="Departure date" class="form-control" name="dates" id="dates" data-select="datepicker"/>
                             </div>
                             <div className = "col-md-6">
-                              <select name="time" id="time" class="form-control">
-                              <option value="Year" disabled selected>Year</option>
+                              <select name="time" id="time" class="form-control" onClick={(e) => this.changeBus(e)}>
+                              <option value="Time" disabled selected>Time</option>
                               <option value="2017">03:00</option>
                               <option value="2016">05:00</option>
                               <option value="2015">07:00</option>
@@ -55,16 +65,16 @@ export class SkeletonPack extends Component { // eslint-disable-line react/prefe
                         <div class="form-row ">
                           <div class="form-holder form-holder-2 row">
                             <div class="col-md-6">
-                              <select placeholder = "Bus" name="bus" id="bus">
-                                <option value="Month" disabled selected>Bus</option>
-                                <option value="Vip">VIP</option>
-                                <option value="Stc">STC</option>
-                                <option value="2mexpress">2M EXPRESS</option>
+                              <select placeholder = "Bus" name="bus" id="buses" onChange={(e) => this.changeBus(e)}>
+                                <option value="Bus" disabled selected>Bus</option>
+                                <option value='VIP'>VIP</option>
+                                <option value='STC'>STC</option>
+                                <option value='2M Express'>2M EXPRESS</option>
 
                               </select>
                             </div>
                             <div class = "col-md-6">
-                              <input type="text" placeholder="Price" class="form-control" disabled/>
+                              <input type="text" placeholder="Price" class="form-control" id="price" disabled value={'GHC ' +  this.props.price}/>
                             </div>
 
                           </div>
@@ -253,6 +263,8 @@ export class SkeletonPack extends Component { // eslint-disable-line react/prefe
     );
   }
 }
+
+
 
 
 
