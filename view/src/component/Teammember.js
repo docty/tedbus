@@ -1,5 +1,6 @@
 import React from 'react'
 import Henry from '../Image/asiedu.png';
+import Eric from '../Image/eric.jpg';
 
 const Teammember = (props) => {
   return (
@@ -14,9 +15,9 @@ const Teammember = (props) => {
        </div>
        <div class="col-md-4">
          <div class="team-item">
-           <img src="assets/images/team_01.jpg" alt=""/>
+           <img src={Eric} alt=""/>
            <div class="down-content">
-             <h4>Eric </h4>
+             <h4>Eric Heckford Bryan</h4>
              <span>Co-Founder</span>
              <p>In sem sem, dapibus non lacus auctor, ornare sollicitudin lacus. Aliquam ipsum urna, semper quis.</p>
            </div>

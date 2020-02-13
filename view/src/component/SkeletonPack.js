@@ -10,15 +10,12 @@ import React, { Component } from 'react';
    constructor(props){
          super(props);
 
- 
-         this.changeBus = this.changeBus.bind(this);
-         this.state = {
-             startDate: new Date()
 
-         };
+         this.changeBusss = this.changeBusss.bind(this);
+
      }
 
-        changeBus(e){
+        changeBusss(e){
 
                  alert('e.target.value');
 
@@ -27,20 +24,20 @@ import React, { Component } from 'react';
   render() {
     return (
       <div class="page-content" style={{backgroundImage: "url('images/wizard-v3.jpg')"}}>
-   <div class="wizard-v3-content">
-     <div class="wizard-form">
-       <div class="wizard-header">
-         <h3 class="heading">Book With TedBus</h3>
-
-       </div>
-           <form class="form-register" action="#" method="post">
-             <div id="form-total">
+        <div class="wizard-v3-content">
+          <div class="wizard-form">
+            <div class="wizard-header">
+              <h3 class="heading">Book With TedBus</h3>
+              <input  type="button" value="ok" onClick={(e) => this.changeBusss(e)} />
+            </div>
+            <form class="form-register"   method="post">
+              <div id="form-total">
 
                  <h2>
                    <span class="step-icon"><i class="zmdi zmdi-account"></i></span>
                    <span class="step-text">Booking</span>
                  </h2>
-                 <input onClick={(e) => this.changeBus(e)} />
+                 <input  type="button" value="ok" onClick={(e) => this.changeBusss(e)} />
                  <section>
                      <div class="inner">
                         <h3>Booking Details:</h3>

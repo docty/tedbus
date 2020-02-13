@@ -1,18 +1,15 @@
 import React, {Component} from 'react';
-import 'react-awesome-slider/dist/styles.css';
- 
-import Personal from "./Personal";
-import Payment from "./Payment";
-import Summary from "./Summary";
+
+
+
 import SkeletonPack from "./SkeletonPack";
 import Icon from '../Image/4.jpg';
 import BookHeaderTab from './BookHeaderTab';
 
-import Vip from '../Image/vip.jpg';
-import Vip_2 from '../Image/vip_2.jpg';
+
 import $ from "jquery";
 import Footer from './Footer';
-import AwesomeSlider from 'react-awesome-slider';
+ 
 
 
 class Skeleton extends Component {

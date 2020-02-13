@@ -30,7 +30,7 @@ const MainBanner = (props) => {
        <div class="item item-3">
          <div class="img-fill">
              <div class="text-content">
-               <h6>we have a what you need</h6>
+               <h6>we have  what you need</h6>
                <h4>Saftey<br/>&amp; Realiable</h4>
                <p>Enjoy your journey with Tedbus Services. We ensure your saftey and Comfortability.</p>
             </div>
