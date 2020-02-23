@@ -6,8 +6,7 @@ import Features from './Features';
 import Forts from './Forts';
 import Footer from './Footer';
 
-import Icon from '../Image/icon.jpg';
-import Late from '../Image/late.jpg';
+
 
 class HomePage extends React.Component {
 
@@ -95,7 +94,7 @@ class HomePage extends React.Component {
                            </div>
                          </div>
                         <div class="col-md-6 align-self-center">
-                            <div className="booking_home">
+                            <div className="booking_home" id="booking_home">
                                 <label  style={{color : 'black'}}> Origin</label>
                                 <select id="origin" onChange={this.changeOrigin} className="form-control" required=""> </select>
                                 <label style={{color : 'black'}}> Destination</label>

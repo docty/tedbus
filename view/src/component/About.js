@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import AboutHeaderTab from './AboutHeaderTab';
 import Teammember from './Teammember';
 import Footer from './Footer';

@@ -14,11 +14,12 @@ class User {
 
     static create(req, res) {
 
-        return Users.create(req.body)
-                  .then(book => res.status(201).send({
-                    message: 'Booking successful'
+        //var idea =  req.body.id;
+        //res.send(idea);
+         return Users.create(req.body).then(book => res.status(201).send({
+                     message: 'Booking successfully'
 
-                  }))
+                 }));
         }
 
         static show(req, res){

@@ -1,4 +1,5 @@
 $(function(){
+
     $("#form-total").steps({
         headerTag: "h2",
         bodyTag: "section",
@@ -13,20 +14,32 @@ $(function(){
             finish : 'Submit',
             current : ''
         },
-        onStepChanging: function (event, currentIndex, newIndex) { 
+        onStepChanging: function (event, currentIndex, newIndex) {
+            var departure = $('#d-dates').val();
+            var time = $('#d-time').val();
+            var bus = $('#d-bus').val();
+            var pickup = $('#d-pickup').val();
+            var passengers = $('#d-passengers').val();
+            var luggage = $('input[name=luggage]:checked').val();
+
             var fullname = $('#first_name').val() + ' ' + $('#last_name').val();
-            var email = $('#email').val();
-            var phone = $('#phone').val();
-            var username = $('#username').val();
-            var gender = $('form input[type=radio]:checked').val();
-            var address = $('#address').val();
+            var email = $('#email_address').val();
+            var phone = $('#phone_number').val();
+
+
+
 
             $('#fullname-val').text(fullname);
             $('#email-val').text(email);
             $('#phone-val').text(phone);
-            $('#username-val').text(username);
-            $('#address-val').text(address);
-            $('#gender-val').text(gender);
+
+
+            $('#departure-date-val').text(departure);
+            $('#departure-time-val').text(time);
+            $('#departure-bus-val').text(bus);
+            $('#departure-pickup-val').text(luggage);
+
+
 
             return true;
         }
@@ -36,4 +49,6 @@ $(function(){
         showOn: "both",
         buttonText : '<i class="zmdi zmdi-chevron-down"></i>',
     });
+
+
 });

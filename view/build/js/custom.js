@@ -4,11 +4,11 @@ jQuery( document ).ready(function( $ ) {
 	"use strict";
 
 
-    
+
         $(function() {
             $( "#tabs" ).tabs();
         });
-
+			
 
         // Page loading animation
 
@@ -19,7 +19,7 @@ jQuery( document ).ready(function( $ ) {
                 $("#preloader").css("visibility", "hidden").fadeOut();
             }, 300);
         });
-        
+
 
         $(window).scroll(function() {
           var scroll = $(window).scrollTop();
@@ -106,7 +106,7 @@ jQuery( document ).ready(function( $ ) {
            // fade:true,
             draggable:false,
             prevArrow:'<button class="PrevArrow"></button>',
-            nextArrow:'<button class="NextArrow"></button>', 
+            nextArrow:'<button class="NextArrow"></button>',
         });
 
         function visible(partial) {
@@ -129,7 +129,7 @@ jQuery( document ).ready(function( $ ) {
             {
               if($('.count-digit').hasClass('counter-loaded')) return;
               $('.count-digit').addClass('counter-loaded');
-              
+
         $('.count-digit').each(function () {
           var $this = $(this);
           jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
@@ -142,5 +142,5 @@ jQuery( document ).ready(function( $ ) {
         });
         }
     })
- 
+
 });

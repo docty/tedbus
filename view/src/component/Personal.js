@@ -1,98 +1,47 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {setValueChange} from './../redux/action/index'
-import cookie from 'react-cookies';
-import $ from "jquery";
-
-class Personal extends Component {
+import React from 'react'
 
 
-    constructor(props){
-        super(props);
-        this.onNextItem = this.onNextItem.bind(this);
-        this.onValueChange = this.onValueChange.bind(this);
-        this.onUserExit  = this.onUserExit.bind(this);
-        this.onUserNonExit  = this.onUserNonExit.bind(this);
-    }
+const Personal = (props) => {
+    return (
+        <section>
+<div className="inner">
+<h3>Personal Information:</h3>
+<div className="form-row">
+<div className="form-holder">
+ <label className="form-row-inner">
+   <input type="text" className="form-control" id="first_name" name="first_name" required/>
+   <span className="label">First Name*</span>
+     <span className="border"></span>
+ </label>
+</div>
+<div className="form-holder">
+   <label className="form-row-inner">
+     <input type="text" className="form-control" id="last_name" name="last_name" required/>
+     <span className="label">Last Name*</span>
+       <span className="border"></span>
+   </label>
+ </div>
+</div>
+<div className="form-row">
+<div className="form-holder">
+<label className="form-row-inner">
+ <input type="text" className="form-control" id="phone_number" name="phone_number" required/>
+ <span className="label">Phone Number*</span>
+   <span className="border"></span>
+</label>
+</div>
+<div className="form-holder">
+<label className="form-row-inner">
+ <input type="text" className="form-control" id="email_address" name="email_address" required/>
+ <span className="label">Email Address*</span>
+   <span className="border"></span>
+</label>
+</div>
+</div>
+</div>
+</section>
 
-    onUserExit(){
-        if (cookie.load('tedbus_surname') !== "") {
-            $('#surname').val(cookie.load('tedbus_surname'));
-            $('#firstname').val(cookie.load('tedbus_firstname'));
-            $('#contact').val(cookie.load('tedbus_contact'));
-            $('#email').val(cookie.load('tedbus_email'));
-        }
-    }
-
-    onUserNonExit(){
-        $('#surname').val('');
-        $('#firstname').val('');
-        $('#contact').val('');
-        $('#email').val('');
-    }
-
-    onValueChange(e){
-
-        this.props.onValueChange(e);
-    }
-
-
-    onNextItem(e){
-        this.props.changeForm(e);
-    }
-
-
-    render() {
-        return (
-
-                <form className="detail-form">
-                    <div style={{paddingBottom:'4%'}}>
-                        <div>
-                            <div className="form-check">
-                                <input className="form-check-input" onChange={() => this.onUserExit()}  type="radio" name="identity"  id="formCheck-2" />
-                                <label   className="form-check-label" htmlFor="formCheck-2">An Existing User</label>
-                            </div>
-                            <div className="form-check">
-                                <input className="form-check-input" type="radio" onChange={() => this.onUserNonExit()}  name="identity" id="formCheck-3"   />
-                                <label className="form-check-label" htmlFor="formCheck-3">I am a new User</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="detail-form-item">
-                        <div><label>Surname</label><input className="form-control" type="text" defaultValue={this.props.valueChange.surname} placeholder="Enter surname" onChange={this.onValueChange} name="surname" id="surname"/></div>
-                        <div><label>First & Other Name</label><input className="form-control" type="text" defaultValue={this.props.valueChange.firstname} placeholder="Enter first & other name" onChange={this.onValueChange} name="firstname" id="firstname"/></div>
-                    </div>
-                    <div className="detail-form-item">
-                        <div><label>Phone Number</label><input className="form-control" type="text" defaultValue={this.props.valueChange.phonenumber} placeholder="Enter phone number" onChange={this.onValueChange} name="phonenumber" id="contact"/></div>
-                        <div><label>Email Address</label><input className="form-control" type="text" defaultValue={this.props.valueChange.email} placeholder="Enter email address" onChange={this.onValueChange} name="email" id="email"/></div>
-                    </div>
-                    <div className="btn-controllers">
-                        <button className="btn btn-primary float-left" type="button" onClick={() => this.onNextItem('detail')}>BACK</button>
-                        <button className="btn btn-primary float-right" type="button" onClick={() => this.onNextItem('payment')}>NEXT</button>
-                    </div>
-                </form>
-
-
-        );
-    }
+    )
 }
 
-export const mapDispatchToProps = (dispatch) => {
-  return {
-
-      onValueChange : (e) => {
-          dispatch(setValueChange(e))
-      }
-    }
-};
-
-export const mapStateToProps = (state) => {
-  return {
-
-        valueChange : state.personal.valueChange,
-
-      }
-};
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Personal);
+export default Personal

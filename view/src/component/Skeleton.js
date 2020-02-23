@@ -3,13 +3,13 @@ import React, {Component} from 'react';
 
 
 import SkeletonPack from "./SkeletonPack";
-import Icon from '../Image/4.jpg';
+//import Icon from '../Image/4.jpg';
 import BookHeaderTab from './BookHeaderTab';
 
 
 import $ from "jquery";
 import Footer from './Footer';
- 
+
 
 
 class Skeleton extends Component {

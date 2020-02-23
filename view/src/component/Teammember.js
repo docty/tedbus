@@ -37,7 +37,7 @@ const Teammember = (props) => {
          <div class="team-item">
            <img src="assets/images/team_03.jpg" alt=""/>
            <div class="down-content">
-             <h4></h4>
+             <h4>Joe Doe</h4>
              <span>Financial Analyst</span>
              <p>In sem sem, dapibus non lacus auctor, ornare sollicitudin lacus. Aliquam ipsum urna, semper quis.</p>
            </div>

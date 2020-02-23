@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import ServiceHeaderTab from './ServiceHeaderTab';
 import ServiceCategory from './ServiceCategory';
 import Footer from './Footer';

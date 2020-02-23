@@ -1,9 +1,12 @@
+//const axios = require('axios');
+
 /*!
  * jQuery Steps v1.1.0 - 09/04/2014
  * Copyright (c) 2014 Rafael Staib (http://www.jquery-steps.com)
  * Licensed under MIT http://www.opensource.org/licenses/MIT
  */
 ;(function ($, undefined)
+
 {
 $.fn.extend({
     _aria: function (name, value)
@@ -210,7 +213,7 @@ function analyzeData(wizard, options, state)
  **/
 function cancel(wizard)
 {
-    wizard.triggerHandler("canceled");
+  wizard.triggerHandler("canceled");
 }
 
 function decreaseCurrentIndexBy(state, decreaseBy)
@@ -277,6 +280,10 @@ function destroy(wizard, options)
  **/
 function finishStep(wizard, state)
 {
+
+
+    //window.location = '/status';
+
     var currentStep = wizard.find(".steps li").eq(state.currentIndex);
 
     if (wizard.triggerHandler("finishing", [state.currentIndex]))
@@ -921,7 +928,7 @@ function registerEvents(wizard, options)
         wizard.bind("keyup" + eventNamespace, keyUpHandler);
     }
 
-    wizard.find(".actions a").bind("click" + eventNamespace, paginationClickHandler);
+     wizard.find(".actions a").bind("click" + eventNamespace, paginationClickHandler);
 }
 
 /**
@@ -992,7 +999,7 @@ function removeStepFromCache(wizard, index)
  **/
 function render(wizard, options, state)
 {
-    // Create a content wrapper and copy HTML from the intial wizard structure
+     // Create a content wrapper and copy HTML from the intial wizard structure
     var wrapperTemplate = "<{0} class=\"{1}\">{2}</{0}>",
         orientation = getValidEnumValue(stepsOrientation, options.stepsOrientation),
         verticalCssClass = (orientation === stepsOrientation.vertical) ? " vertical" : "",
@@ -1002,9 +1009,9 @@ function render(wizard, options, state)
         stepContents = contentWrapper.children(options.bodyTag);
 
     // Transform the wizard wrapper and remove the inner HTML
-    wizard.attr("role", "application").empty().append(stepsWrapper).append(contentWrapper)
-        .addClass(options.cssClass + " " + options.clearFixCssClass + verticalCssClass);
+       wizard.attr("role", "application").empty().append(stepsWrapper).append(contentWrapper).addClass(options.cssClass + " " + options.clearFixCssClass + verticalCssClass);
 
+//
     // Add WIA-ARIA support
     stepContents.each(function (index)
     {

@@ -26,9 +26,7 @@ const ServiceHeaderTab = (props) => {
                            <li className="nav-item">
                              <a className="nav-link" href="/contact">Contact Us</a>
                            </li>
-                           <li className="nav-item">
-                             <a className="nav-link" href="#booking_home">Book Now</a>
-                           </li>
+
                          </ul>
                        </div>
                  </div>
