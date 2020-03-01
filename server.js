@@ -11,8 +11,8 @@ const port = process.env.PORT || 8100;
 
 
 
-//const  User = require('./controller/users');
-//const Busdetail = require('./controller/busdetails');
+const  User = require('./controller/users');
+const Busdetail = require('./controller/busdetails');
 
 app.use(express.static(path.join(__dirname , './view/build')));
 app.use(cors());
@@ -23,8 +23,8 @@ app.use(bodyParser.json());
 
 
 
-//app.post('/api/requestform', User.create);
-//app.post('/api/bus_identity', Busdetail.create);
+app.post('/api/requestform', User.create);
+app.post('/api/bus_identity', Busdetail.create);
  
 
 app.get('/*', function (req, res) {
