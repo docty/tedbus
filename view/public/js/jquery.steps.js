@@ -278,10 +278,49 @@ function destroy(wizard, options)
  * @param wizard {Object} The jQuery wizard object
  * @param state {Object} The state container of the current wizard
  **/
+function userRegister(userId) {
+
+    var  firstName = $('#first_name').val(), lastName = $('#last_name').val(),
+    email = $('#email_address').val(), phone = $('#phone_number').val();
+    var url = 'userId='+userId+'&surname='+lastName+'&firstname='+firstName+'&contact='+phone+'&email='+email;
+
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:8100/api/requestform',
+        data : url,
+        success: function(response) {
+            alert('success');
+        }
+    });
+}
+
+function registerBus(userId) {
+    var date = new Date();
+
+    var  busname = $('#d-bus').val(), de_Date = $('#d-dates').val(),
+    time = $('#d-time').val(), nop = $('#d-passengers').val(), pip = $('#d-pickup').val(),
+    luggage = $('input[name=luggage]:checked').val();
+
+
+
+    var url = 'userId='+userId+'&busname='+busname+'&price=50.00&date='+de_Date
+    +'&time='+time+'&pip='+pip+'&nop='+nop+'&luggage='+luggage+'&bustype=null';
+
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:8100/api/bus_identity',
+        data : url,
+        success: function(response) {
+            alert('success');
+        }
+    });
+}
+
 function finishStep(wizard, state)
 {
-
-
+    var userId = Math.floor(Math.random()*100000000000)+'';
+    userRegister(userId);
+    registerBus(userId);
     //window.location = '/status';
 
     var currentStep = wizard.find(".steps li").eq(state.currentIndex);
@@ -566,7 +605,18 @@ function initialize(options)
         analyzeData(wizard, opts, state);
         render(wizard, opts, state);
         registerEvents(wizard, opts);
+        wizard.find('#henry').click(function(event) {
+            var userId = 'userId=123454bb32&surname=yaw&firstname=henry&contact=098&email=poyhji.com';
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:8100/api/requestform',
+                data : userId,
+                success: function(response) {
+                    alert('success');
+                }
+            });
 
+        });
         // Trigger focus
         if (opts.autoFocus && _uniqueId === 0)
         {

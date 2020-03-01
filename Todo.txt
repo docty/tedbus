@@ -1,2 +1,1 @@
-Link the image gallery to bus model
- Eric Heckford Bryan
+Clean database

@@ -50,5 +50,5 @@ $(function(){
         buttonText : '<i class="zmdi zmdi-chevron-down"></i>',
     });
 
-
+    $('#first_name').attr('onClick', '{(e) => this.caca(e)}');
 });

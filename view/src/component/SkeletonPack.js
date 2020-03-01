@@ -18,8 +18,9 @@ import Summary from './Summary';
             <div className="wizard-header">
               <h3 className="heading">Book With TedBus</h3>
             </div>
-            <form className="form-register" action="/api/requestform"  method="post">
+            <form className="form-register"  method="post">
               <div id="form-total">
+
                  <h2>
                    <span className="step-icon"><i className="zmdi zmdi-account"></i></span>
                    <span className="step-text">Booking</span>
