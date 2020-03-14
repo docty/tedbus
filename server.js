@@ -2,7 +2,7 @@ require('dotenv').config();
 const express  = require('express');
 const path = require('path');
 const axios = require('axios');
-//const pg = require('pg');
+
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
@@ -34,7 +34,7 @@ app.get('/*', function (req, res) {
 
 
 
- 
+
 
 
 

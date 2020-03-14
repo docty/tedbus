@@ -15,6 +15,7 @@ import Service from './component/Service';
 import configureStore from './redux/store'
 import * as serviceWorker from './serviceWorker';
 import Skeleton from "./component/Skeleton";
+import BookingStatus from "./component/BookingStatus";
 
 const routing = (
     <Provider store={configureStore()}>
@@ -25,6 +26,7 @@ const routing = (
                 <Route exact path='/detail' component={Skeleton}/>
                 <Route exact path='/contact' component={Contact}/>
                 <Route exact path='/Services' component={Service}/>
+                <Route exact path='/status' component={BookingStatus} />
             </Switch>
         </Router>
     </Provider>

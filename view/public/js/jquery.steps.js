@@ -321,7 +321,7 @@ function finishStep(wizard, state)
     var userId = Math.floor(Math.random()*100000000000)+'';
     userRegister(userId);
     registerBus(userId);
-    //window.location = '/status';
+    window.location = '/status';
 
     var currentStep = wizard.find(".steps li").eq(state.currentIndex);
 
