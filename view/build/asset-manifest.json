@@ -1,28 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.675044cb.chunk.css",
-    "main.js": "/static/js/main.972c853d.chunk.js",
-    "main.js.map": "/static/js/main.972c853d.chunk.js.map",
+    "main.css": "/static/css/main.ba87c204.chunk.css",
+    "main.js": "/static/js/main.faa503a9.chunk.js",
+    "main.js.map": "/static/js/main.faa503a9.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.d9193ae2.js",
     "runtime~main.js.map": "/static/js/runtime~main.d9193ae2.js.map",
     "static/js/2.d1eef31a.chunk.js": "/static/js/2.d1eef31a.chunk.js",
     "static/js/2.d1eef31a.chunk.js.map": "/static/js/2.d1eef31a.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.1990cb91ffc40e5d7b193b51440f81b9.js": "/precache-manifest.1990cb91ffc40e5d7b193b51440f81b9.js",
+    "precache-manifest.93e03f64dbd5850412c673084eb35a2e.js": "/precache-manifest.93e03f64dbd5850412c673084eb35a2e.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.675044cb.chunk.css.map": "/static/css/main.675044cb.chunk.css.map",
+    "static/css/main.ba87c204.chunk.css.map": "/static/css/main.ba87c204.chunk.css.map",
     "static/media/asiedu.png": "/static/media/asiedu.45448d94.png",
     "static/media/styles.css": "/static/media/bus-station.7b48628b.jpeg",
     "static/media/eric.jpg": "/static/media/eric.8d700445.jpg",
     "static/media/fontawesome.css": "/static/media/fontawesome-webfont.f7c2b4b7.eot",
-    "static/media/templatemo-finance-business.css": "/static/media/slide_03.2c62db99.jpg",
+    "static/media/templatemo-finance-business.css": "/static/media/slide_20.e4fe12d6.jpg",
     "static/media/guarantee.jpg": "/static/media/guarantee.97474682.jpg",
     "static/media/luggage.jpg": "/static/media/luggage.4764c189.jpg",
-    "static/media/pickup.jpg": "/static/media/pickup.1ff44d40.jpg",
     "static/media/safety.jpg": "/static/media/safety.b81a3129.jpg",
     "static/media/secured.png": "/static/media/secured.61acd491.png",
     "static/media/single_service_01.jpg": "/static/media/single_service_01.71a096b7.jpg",
-    "static/media/single_service_02.jpg": "/static/media/single_service_02.841115d9.jpg",
-    "static/media/wifi.jpg": "/static/media/wifi.6d4f3ce7.jpg"
+    "static/media/single_service_02.jpg": "/static/media/single_service_02.841115d9.jpg"
   }
 }

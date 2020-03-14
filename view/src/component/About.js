@@ -14,7 +14,7 @@ export class About extends Component { // eslint-disable-line react/prefer-state
           <div class="container">
             <div class="row">
               <div class="col-md-12">
-                <h1>About Us</h1>
+                <h1 style={{color: 'white'}}>About Us</h1>
                 <span>Your safety ride is our main priority</span>
                </div>
             </div>

@@ -25,7 +25,7 @@ class HomePage extends React.Component {
     }
     changeOrigin(e){
 
-        const regions = ['Accra', 'Kumasi', 'Sunyani'];
+        const regions = ['Accra', 'Kumasi'];
         let deduct =  regions.filter(region => {
             return region !== e.target.value;
         });
@@ -39,7 +39,7 @@ class HomePage extends React.Component {
 
     changeDestination(e){
 
-        const regions = ['Accra', 'Kumasi', 'Sunyani'];
+        const regions = ['Accra', 'Kumasi'];
         let deduct =  regions.filter(region => {
             return region !== e.target.value;
         });
@@ -52,7 +52,7 @@ class HomePage extends React.Component {
     }
 
     componentDidMount() {
-        const regions = ['Accra', 'Kumasi', 'Sunyani'];
+        const regions = ['Accra', 'Kumasi'];
         for (let i = 0; i < regions.length; i++){
             $("#origin").append(new Option(regions[i], regions[i]));
         }

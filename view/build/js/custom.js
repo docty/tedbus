@@ -5,10 +5,28 @@ jQuery( document ).ready(function( $ ) {
 
 
 
+		$('#form-submit').click(function(event) {
+			 var name = $('#name').val();
+			 var email = $('#email').val();
+			 var message = $('#message').val();
+			 var url = 'name='+name+'&email='+email+'&message='+message;
+
+		     $.ajax({
+		         type: 'POST',
+		         url: 'http://localhost:8100/api/contact_us',
+		         data : url,
+		         success: function(response) {
+		             alert('success');
+		         }
+		     });
+
+
+		});
+
         $(function() {
             $( "#tabs" ).tabs();
         });
-			
+
 
         // Page loading animation
 

@@ -21,22 +21,22 @@ const Footer = (props) => {
           <div className="col-md-3 footer-item">
             <h4>Our Services</h4>
             <ul className="menu-list">
-              <li><a href="/individual">Individual Booking</a></li>
-              <li><a href="/bulk">Bulk Booking</a></li>
+              <li><a href="/Services">Individual Booking</a></li>
+              <li><a href="/Services">Bulk Booking</a></li>
             </ul>
           </div>
           <div className="col-md-3 footer-item">
             <h4>Extras</h4>
             <ul className="menu-list">
               <li><a href="/about">About Us</a></li>
-              <li><a href="/support">Quick Support</a></li>
+
               <li><a href="/policy">Privacy Policy</a></li>
             </ul>
           </div>
           <div className="col-md-3 footer-item last-item">
             <h4>Contact Us</h4>
             <div className="contact-form">
-              <form id="contact footer-contact" action="" method="post">
+              <form id="contact footer-contact" action="#" >
                 <div className="row">
                   <div className="col-lg-12 col-md-12 col-sm-12">
                     <fieldset>

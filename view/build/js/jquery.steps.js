@@ -295,7 +295,7 @@ function userRegister(userId) {
 }
 
 function registerBus(userId) {
-    var date = new Date();
+     
 
     var  busname = $('#d-bus').val(), de_Date = $('#d-dates').val(),
     time = $('#d-time').val(), nop = $('#d-passengers').val(), pip = $('#d-pickup').val(),
@@ -605,18 +605,7 @@ function initialize(options)
         analyzeData(wizard, opts, state);
         render(wizard, opts, state);
         registerEvents(wizard, opts);
-        wizard.find('#henry').click(function(event) {
-            var userId = 'userId=123454bb32&surname=yaw&firstname=henry&contact=098&email=poyhji.com';
-            $.ajax({
-                type: 'POST',
-                url: 'http://localhost:8100/api/requestform',
-                data : userId,
-                success: function(response) {
-                    alert('success');
-                }
-            });
 
-        });
         // Trigger focus
         if (opts.autoFocus && _uniqueId === 0)
         {

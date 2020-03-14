@@ -13,12 +13,12 @@ class BusDetail {
     }
 
     static create(req, res) {
-        return console.log('rwrw');
-        // return Busdetails.create(req.body)
-        //           .then(book => res.status(201).send({
-        //             message: 'Booking successful'
-        //
-        //           }))
+
+        return Busdetails.create(req.body)
+                  .then(book => res.status(201).send({
+                    message: 'Booking successful'
+
+                  }))
         }
 
         static show(req, res){

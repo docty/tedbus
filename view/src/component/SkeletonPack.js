@@ -3,6 +3,7 @@ import Booking from './Booking';
 import Personal from './Personal';
 import Payment from './Payment';
 import Summary from './Summary';
+import Pricing from './Pricing';
 /**
  * SkeletonPack
  */
@@ -20,7 +21,11 @@ import Summary from './Summary';
             </div>
             <form className="form-register"  method="post">
               <div id="form-total">
-
+                <h2>
+                  <span className="step-icon"><i className="zmdi zmdi-account"></i></span>
+                  <span className="step-text">Pricing</span>
+                </h2>
+                <Pricing/>
                  <h2>
                    <span className="step-icon"><i className="zmdi zmdi-account"></i></span>
                    <span className="step-text">Booking</span>

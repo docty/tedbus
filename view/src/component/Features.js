@@ -1,7 +1,7 @@
 import React from 'react'
 import Luggage from '../images/luggage.jpg';
 import Pickup from '../images/pickup.jpg';
-import Wifi from '../images/wifi.jpg';
+import Wifi from '../images/wifi_stable.jpg';
 
 const Features = (props) => {
   return (
