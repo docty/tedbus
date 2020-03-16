@@ -16,6 +16,10 @@ module.exports = {
           key: 'userId'
         }
       },
+      busId: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       busname: {
         allowNull: false,
         type: Sequelize.STRING
@@ -48,6 +52,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
+      status: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -56,7 +64,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    });
+    }).then(() => queryInterface.addIndex('Busdetails', ['userId']));
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('Busdetails');

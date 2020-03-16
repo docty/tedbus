@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express  = require('express');
 const path = require('path');
-const axios = require('axios');
+
 
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -24,9 +24,24 @@ app.use(bodyParser.json());
 
 
 
-app.post('/api/requestform', User.create);
-app.post('/api/bus_identity', Busdetail.create);
+app.post('/api/users', User.create);
+app.get('/api/users', User.index);
+app.get('/api/users/:id', User.show);
+app.delete('/api/users', User.remove);
+
+app.post('/api/busbooking', Busdetail.create);
+app.get('/api/busbooking', Busdetail.index);
+app.get('/api/busbooking/:userId', Busdetail.show);
+
+
 app.post('/api/contact_us', Contactus.create);
+app.get('/api/makepayment/:id', Busdetail.payment); // Make an update
+
+
+ 
+
+
+
 
 app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, './view/build/index.html'));

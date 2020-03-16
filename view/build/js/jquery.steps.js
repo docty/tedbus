@@ -286,7 +286,7 @@ function userRegister(userId) {
 
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:8100/api/requestform',
+        url: 'http://localhost:8100/api/users',
         data : url,
         success: function(response) {
             alert('success');
@@ -296,19 +296,20 @@ function userRegister(userId) {
 
 function registerBus(userId) {
      
-
+    var busId = Math.floor(Math.random()*100000000000)+'';
     var  busname = $('#d-bus').val(), de_Date = $('#d-dates').val(),
     time = $('#d-time').val(), nop = $('#d-passengers').val(), pip = $('#d-pickup').val(),
-    luggage = $('input[name=luggage]:checked').val();
+    luggage = $('input[name=luggage]:checked').val(), email = $('#email_address').val();
 
 
 
     var url = 'userId='+userId+'&busname='+busname+'&price=50.00&date='+de_Date
-    +'&time='+time+'&pip='+pip+'&nop='+nop+'&luggage='+luggage+'&bustype=null';
+    +'&time='+time+'&pip='+pip+'&nop='+nop+'&luggage='+luggage+'&bustype=null'
+    +'&email='+email+'&status=Unpaid&busId='+busId;
 
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:8100/api/bus_identity',
+        url: 'http://localhost:8100/api/busbooking',
         data : url,
         success: function(response) {
             alert('success');
