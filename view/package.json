@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "jquery": "^3.4.1",
-    "jquery-ui": "^1.12.1",
+    "jquery-ui": "^1.13.0",
     "moment": "^2.24.0",
     "react": "^16.9.0",
     "react-awesome-slider": "^1.0.1",
